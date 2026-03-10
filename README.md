@@ -35,7 +35,11 @@ This repository serves as a **living knowledge base** for our PM team to:
 ├── case-studies/         # Real examples of Claude Code used in our PM work
 │
 ├── skills/               # Guides on Claude Code capabilities relevant to PMs
-│   └── context-management.md   # How context windows work and how to manage long sessions
+│   ├── context-management.md   # How context windows work and how to manage long sessions
+│   └── agents/           # Pullable agent templates for specialized PM tasks
+│       ├── user-researcher.md  # Synthesize interviews, tickets, and qualitative feedback
+│       ├── executive.md        # Reframe updates and decisions for leadership
+│       └── engineer.md         # Review specs for technical gaps and feasibility
 │
 ├── learning/             # Shared courses, certifications, and learning resources
 │
@@ -72,12 +76,14 @@ This repository serves as a **living knowledge base** for our PM team to:
 |---|---|---|
 | User interview synthesis | 🟢 Done | `workflows/Basic Workflows/` |
 | Competitive research synthesis | 🟢 Done | `workflows/Basic Workflows/` |
+| Synthesize research with a specialist agent | 🟢 Done | `skills/agents/user-researcher.md` |
 
 **Planning & Execution**
 | Use Case | Status | Where |
 |---|---|---|
 | User story & ticket generation | 🟢 Done | `workflows/Basic Workflows/` |
 | Writing & refining PRDs | 🟡 In Progress | `prompts/execution/` |
+| Spec review for technical gaps | 🟢 Done | `skills/agents/engineer.md` |
 | Roadmap scenario planning | 🔵 Planned | `prompts/strategy/` |
 
 **Communication & Reporting**
@@ -86,6 +92,7 @@ This repository serves as a **living knowledge base** for our PM team to:
 | Meeting notes → action items | 🟢 Done | `workflows/Basic Workflows/` |
 | Weekly status updates | 🟢 Done | `workflows/Basic Workflows/` |
 | Sprint retrospectives | 🟢 Done | `workflows/Basic Workflows/` |
+| Leadership-ready updates and briefs | 🟢 Done | `skills/agents/executive.md` |
 
 **Strategy & Analytics**
 | Use Case | Status | Where |
