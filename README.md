@@ -19,7 +19,8 @@ This repository serves as a **living knowledge base** for our PM team to:
 
 ```
 ├── getting-started/      # Everything you need to install and start using Claude Code
-│   ├── installing-claude.md    # How to install Claude Code (Mac, Windows)
+│   ├── installing-claude.md    # How to install Claude Code (Mac, Windows) + why use the CLI
+│   ├── claude-md-setup.md      # How to set up persistent context for your product/team
 │   └── faq.md                  # Common setup issues and troubleshooting
 │
 ├── prompts/              # Reusable prompt templates by PM use case
@@ -29,10 +30,12 @@ This repository serves as a **living knowledge base** for our PM team to:
 │   └── analytics/        # Data interpretation, metric definitions, OKR framing
 │
 ├── workflows/            # Step-by-step Claude Code workflows for common PM tasks
+│   └── Basic Workflows/  # 6 ready-to-use templates + quickstart guide
 │
 ├── case-studies/         # Real examples of Claude Code used in our PM work
 │
 ├── skills/               # Guides on Claude Code capabilities relevant to PMs
+│   └── context-management.md   # How context windows work and how to manage long sessions
 │
 ├── learning/             # Shared courses, certifications, and learning resources
 │
@@ -43,31 +46,51 @@ This repository serves as a **living knowledge base** for our PM team to:
 
 ## 🚀 Getting Started
 
-**New to Claude Code?** Head to the [`getting-started/`](./getting-started/) folder first — it covers everything from installation to your first interaction, step by step. No engineering background required.
+**New to Claude Code?** Follow these steps in order:
 
-Once you're set up:
-
-1. **Explore the `prompts/` folder** to find ready-to-use templates for your current task.
-2. **Read a case study** to see how teammates have applied Claude Code in real scenarios.
-3. **Try a workflow** end-to-end and document your experience.
-4. **Contribute back** — share what worked (and what didn't).
+1. **Install Claude Code** — [`getting-started/installing-claude.md`](./getting-started/installing-claude.md) covers Mac and Windows, including Zscaler setup, and explains why you're using the terminal instead of the website.
+2. **Run your first workflow** — [`workflows/Basic Workflows/quickstart.md`](./workflows/Basic%20Workflows/quickstart.md) walks you through a complete end-to-end example in under 15 minutes. Start here before exploring other templates.
+3. **Set up your CLAUDE.md** — [`getting-started/claude-md-setup.md`](./getting-started/claude-md-setup.md) shows you how to give Claude persistent context about your product and team. Do this once and save time every session.
+4. **Explore the templates** — Browse [`workflows/Basic Workflows/`](./workflows/Basic%20Workflows/) for 6 ready-to-use PM templates.
+5. **Contribute back** — Share what worked (and what didn't).
 
 ---
 
 ## 💡 PM Use Cases We're Exploring
 
-| Use Case | Status | Folder |
-|---|---|---|
-| How to set-up Claude Code | 🟡 In Progress | `getting-started/` |
-| Writing & refining PRDs | 🟡 In Progress | `prompts/execution` |
-| User story & ticket generation | 🟡 In Progress | `prompts/execution` |
-| Competitive research synthesis | 🔵 Planned | `prompts/strategy` |
-| Roadmap scenario planning | 🔵 Planned | `prompts/strategy` |
-| Interview & research synthesis | 🔵 Planned | `prompts/discovery` |
-| OKR & metric definition | 🔵 Planned | `prompts/analytics` |
-| Stakeholder update drafting | 🔵 Planned | `workflows/` |
-
 > **Legend:** 🟢 Done · 🟡 In Progress · 🔵 Planned
+
+**Setup & Onboarding**
+| Use Case | Status | Where |
+|---|---|---|
+| Install & configure Claude Code | 🟢 Done | `getting-started/installing-claude.md` |
+| Set up CLAUDE.md for your product | 🟢 Done | `getting-started/claude-md-setup.md` |
+| Run your first workflow | 🟢 Done | `workflows/Basic Workflows/quickstart.md` |
+
+**Research & Discovery**
+| Use Case | Status | Where |
+|---|---|---|
+| User interview synthesis | 🟢 Done | `workflows/Basic Workflows/` |
+| Competitive research synthesis | 🟢 Done | `workflows/Basic Workflows/` |
+
+**Planning & Execution**
+| Use Case | Status | Where |
+|---|---|---|
+| User story & ticket generation | 🟢 Done | `workflows/Basic Workflows/` |
+| Writing & refining PRDs | 🟡 In Progress | `prompts/execution/` |
+| Roadmap scenario planning | 🔵 Planned | `prompts/strategy/` |
+
+**Communication & Reporting**
+| Use Case | Status | Where |
+|---|---|---|
+| Meeting notes → action items | 🟢 Done | `workflows/Basic Workflows/` |
+| Weekly status updates | 🟢 Done | `workflows/Basic Workflows/` |
+| Sprint retrospectives | 🟢 Done | `workflows/Basic Workflows/` |
+
+**Strategy & Analytics**
+| Use Case | Status | Where |
+|---|---|---|
+| OKR & metric definition | 🔵 Planned | `prompts/analytics/` |
 
 ---
 

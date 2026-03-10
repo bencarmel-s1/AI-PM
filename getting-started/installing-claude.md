@@ -1,3 +1,27 @@
+# What is Claude Code (and why not just use the website)?
+
+Claude.ai on the web is a chat interface — great for one-off questions, but it can't read your local files.
+
+**Claude Code is the terminal version.** It runs on your laptop and can read files directly from your folders. This is what unlocks the `@filename` pattern used in all the PM templates:
+
+```
+Process @meeting-notes.txt using @meeting-notes-to-action-items.md
+```
+
+That command only works in Claude Code — not on the website.
+
+**When to use which:**
+| Task | Use |
+|---|---|
+| Quick question, writing help | claude.ai web |
+| Processing your own files (notes, research, PRDs) | Claude Code |
+| Running PM templates | Claude Code |
+| Working with multiple documents at once | Claude Code |
+
+Both require a Claude Pro or Max subscription ($20/month at claude.ai).
+
+---
+
 # Install Claude Code - Step 1
 In your terminal, copy and paste one of these commands, then press Enter:
 
