@@ -19,7 +19,7 @@ This repository serves as a **living knowledge base** for our PM team to:
 
 ```
 ├── getting-started/      # Everything you need to install and start using Claude Code
-│   ├── installing-claude.md         # How to install Claude Code (Mac, Windows)
+│   ├── installing-claude.md    # How to install Claude Code (Mac, Windows)
 │   └── faq.md                  # Common setup issues and troubleshooting
 │
 ├── prompts/              # Reusable prompt templates by PM use case
