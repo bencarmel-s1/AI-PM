@@ -193,12 +193,7 @@ product-management-lifecycle/
 
 ## 🤝 How to Contribute
 
-This is an early-stage folder and every stage needs content. The highest-value contributions right now:
-
-1. **Document a lifecycle workflow you've already run** — especially PRD writing or Jira ticket generation
-2. **Share a PRD template** that reflects how our team actually writes specs
-3. **Write up the Jira integration** once you've tested the Atlassian MCP connection end-to-end
-4. **Add to any stage** that reflects real work you've done — even a rough draft is better than nothing
+This is an early-stage folder and every stage needs content. The repository will be updated by Contributors.
 
 Use the [case study template](../README.md) to capture real examples as you go.
 
