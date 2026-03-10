@@ -34,6 +34,8 @@ This repository serves as a **living knowledge base** for our PM team to:
 │
 ├── skills/               # Guides on Claude Code capabilities relevant to PMs
 │
+├── learning/             # Shared courses, certifications, and learning resources
+│
 └── resources/            # External links, papers, and reference material
 ```
 
@@ -76,7 +78,8 @@ We grow this repo together. Here's how you can add value:
 1. **Add a prompt** — Drop a tested prompt into the right `prompts/` subfolder with a short description of what it does and when to use it.
 2. **Document a workflow** — Write a short step-by-step guide in `workflows/` for a task you've automated or improved with Claude Code.
 3. **Share a case study** — Capture a real example in `case-studies/` using the template below.
-4. **Raise a question or idea** — Open an issue to spark discussion with the team.
+4. **Share a learning resource** — Add a course or tutorial to [`learning/`](./learning/) using the template in that folder's README.
+5. **Raise a question or idea** — Open an issue to spark discussion with the team.
 
 ### Case Study Template
 
@@ -115,10 +118,12 @@ To keep our prompt library high quality and reusable:
 
 ## 📚 Learning Resources
 
+Head to the [`learning/`](./learning/) folder for shared courses, certifications, and tutorials — including the first entry, [Claude Code for Product Managers](./learning/claude-code-for-pms.md) by Carl Vellotti.
+
+Quick links:
 - [Anthropic Prompt Engineering Guide](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)
 - [Claude Code Documentation](https://docs.claude.ai)
 - [Zscaler Certificate Documentation](https://connect.sentinelone.com/site/b00a4fac-a250-505d-abfd-079c9f50f972/page/64426c1d-c34b-433c-a5f2-db32495d0dc3)
-- *(Add internal links, recordings, or Confluence pages here)*
 
 ---
 
