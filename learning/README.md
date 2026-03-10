@@ -25,7 +25,7 @@ There's a lot of great content out there — courses, certifications, tutorials,
 
 | Name | Topic | Link | Format | Added By | Status |
 |---|---|---|---|---|---|
-| [Claude Code for Product Managers](./claude-code-for-pms.md) | AI / Claude Code | [ccforpms.com](https://ccforpms.com/) | Interactive | Ingemar Dvorsky | 🔵 New |
+| [Claude Code for Product Managers](./claude-code-for-pms.md) | AI / Claude Code | [ccforpms.com](https://ccforpms.com/) | Interactive | Ingemar Dvorsky | 🟢 Recommended |
 
 > **Legend:** 🟢 Recommended · 🟡 Being Explored · 🔵 New
 
