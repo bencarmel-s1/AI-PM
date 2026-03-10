@@ -54,6 +54,7 @@ This repository serves as a **living knowledge base** for our PM team to:
 
 1. **Install Claude Code** — [`getting-started/installing-claude.md`](./getting-started/installing-claude.md) covers Mac and Windows, including Zscaler setup, and explains why you're using the terminal instead of the website.
 2. **Complete the level-set course** — Work through [Claude Code for Product Managers](./learning/claude-code-for-pms.md) by Carl Vellotti (~10–12 hours, self-paced, free with Claude Pro). This is the shared baseline for the whole team — do this before anything else.
+3. **Get yourself familiar with the Product Management Lifecycle with the use of Claude Code** - Work through [Product Management Lifecycle](./product-management-lifecycle/) which showcases the end-to-end PM workflow.
 3. **Run your first workflow** — [`workflows/basic Workflows/quickstart.md`](./workflows/basic%20Workflows/quickstart.md) walks you through a complete end-to-end example in under 15 minutes. Start here before exploring other templates.
 4. **Set up your CLAUDE.md** — [`getting-started/claude-md-setup.md`](./getting-started/claude-md-setup.md) shows you how to give Claude persistent context about your product and team. Do this once and save time every session.
 5. **Explore the templates** — Browse [`workflows/basic Workflows/`](./workflows/basic%20Workflows/) for 6 ready-to-use PM templates.
