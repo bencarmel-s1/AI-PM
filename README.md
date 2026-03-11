@@ -78,14 +78,14 @@ This repository serves as a **living knowledge base** for our PM team to:
 |---|---|---|
 | User interview synthesis | 🟢 Done | `workflows/Basic Workflows/` |
 | Competitive research synthesis | 🟢 Done | `workflows/Basic Workflows/` |
-| Synthesize research with a specialist agent | 🟢 Done | `skills/agents/user-researcher.md` |
+| Synthesize research with a specialist agent | 🟢 Done | `skills/reviewer-guides/user-researcher.md` |
 
 **Planning & Execution**
 | Use Case | Status | Where |
 |---|---|---|
 | User story & ticket generation | 🟢 Done | `workflows/Basic Workflows/` |
 | Writing & refining PRDs | 🟡 In Progress | `prompts/execution/` |
-| Spec review for technical gaps | 🟢 Done | `skills/agents/engineer.md` |
+| Spec review for technical gaps | 🟢 Done | `skills/reviewer-guides/engineer.md` |
 | Roadmap scenario planning | 🔵 Planned | `prompts/strategy/` |
 
 **Communication & Reporting**
@@ -94,7 +94,7 @@ This repository serves as a **living knowledge base** for our PM team to:
 | Meeting notes → action items | 🟢 Done | `workflows/Basic Workflows/` |
 | Weekly status updates | 🟢 Done | `workflows/Basic Workflows/` |
 | Sprint retrospectives | 🟢 Done | `workflows/Basic Workflows/` |
-| Leadership-ready updates and briefs | 🟢 Done | `skills/agents/executive.md` |
+| Leadership-ready updates and briefs | 🟢 Done | `skills/reviewer-guides/executive.md` |
 
 **Strategy & Analytics**
 | Use Case | Status | Where |

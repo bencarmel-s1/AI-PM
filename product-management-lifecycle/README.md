@@ -40,7 +40,7 @@ The goal: make the PM process from raw discovery to delivered feature faster, mo
 **Claude's role:** Synthesize. Theme. Surface patterns you'd miss by reading linearly.
 
 **Tools available today:**
-- [`skills/agents/user-researcher.md`](../skills/agents/user-researcher.md) — synthesize interviews, tickets, and qualitative feedback
+- [`skills/reviewer-guides/user-researcher.md`](../skills/reviewer-guides/user-researcher.md) — synthesize interviews, tickets, and qualitative feedback
 - [`workflows/basic Workflows/user-research-synthesis.md`](../workflows/basic%20Workflows/user-research-synthesis.md) — step-by-step workflow
 - [`workflows/basic Workflows/competitive-analysis.md`](../workflows/basic%20Workflows/competitive-analysis.md) — competitive research synthesis
 - [`prompts/discovery/`](../prompts/discovery/) — targeted discovery prompts *(coming soon)*
@@ -77,7 +77,7 @@ The goal: make the PM process from raw discovery to delivered feature faster, mo
 **Claude's role:** Draft sections, suggest structure, flag missing edge cases and error states, and run an engineer review before you share.
 
 **Tools available today:**
-- [`skills/agents/engineer.md`](../skills/agents/engineer.md) — review your PRD for technical gaps before sending to eng
+- [`skills/reviewer-guides/engineer.md`](../skills/reviewer-guides/engineer.md) — review your PRD for technical gaps before sending to eng
 - [`prompts/execution/`](../prompts/execution/) — PRD drafting prompts *(in progress)*
 
 ---
@@ -91,7 +91,7 @@ The goal: make the PM process from raw discovery to delivered feature faster, mo
 **Tools available today:**
 - Claude Code can scaffold interactive prototypes from a PRD or wireframe description — see [`Prototyping/`](../../Prototyping/) for examples of real prototypes built this way
 - Figma MCP integration — share a Figma URL and Claude can read your designs and generate code directly from them
-- [`skills/agents/engineer.md`](../skills/agents/engineer.md) — sanity-check prototype assumptions before showing to engineering
+- [`skills/reviewer-guides/engineer.md`](../skills/reviewer-guides/engineer.md) — sanity-check prototype assumptions before showing to engineering
 
 **What's coming:**
 - A `prototyping/` workflow in this folder: from PRD → working prototype in one session
@@ -123,7 +123,7 @@ The goal: make the PM process from raw discovery to delivered feature faster, mo
 **Tools available today:**
 - [`workflows/basic Workflows/weekly-status-update.md`](../workflows/basic%20Workflows/weekly-status-update.md)
 - [`workflows/basic Workflows/sprint-retrospective.md`](../workflows/basic%20Workflows/sprint-retrospective.md)
-- [`skills/agents/executive.md`](../skills/agents/executive.md) — turn sprint notes into leadership-ready updates
+- [`skills/reviewer-guides/executive.md`](../skills/reviewer-guides/executive.md) — turn sprint notes into leadership-ready updates
 
 ---
 
@@ -145,11 +145,11 @@ This lifecycle is a frame — a way to see how all the other content in the repo
 
 | If you're at this stage... | Start here |
 |---|---|
-| Discovery | `skills/agents/user-researcher.md` · `workflows/basic Workflows/` |
-| PRD writing | `prompts/execution/` · `skills/agents/engineer.md` |
-| Prototyping | `Prototyping/` · Figma MCP integration · `skills/agents/engineer.md` |
+| Discovery | `skills/reviewer-guides/user-researcher.md` · `workflows/basic Workflows/` |
+| PRD writing | `prompts/execution/` · `skills/reviewer-guides/engineer.md` |
+| Prototyping | `Prototyping/` · Figma MCP integration · `skills/reviewer-guides/engineer.md` |
 | Jira / ticket creation | `prompts/execution/` · *(lifecycle workflows, coming soon)* |
-| Stakeholder communication | `skills/agents/executive.md` · `workflows/basic Workflows/weekly-status-update.md` |
+| Stakeholder communication | `skills/reviewer-guides/executive.md` · `workflows/basic Workflows/weekly-status-update.md` |
 | Retrospectives | `workflows/basic Workflows/sprint-retrospective.md` |
 
 ---
