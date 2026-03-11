@@ -50,6 +50,7 @@ When documenting a workflow, include:
 | [`basic-workflows/`](./basic-workflows/) | 6 ready-to-use templates for everyday PM tasks |
 | [`advanced-workflow/prd-creation/`](./advanced-workflow/prd-creation/) | Full 5-phase PRD creation workflow with Socratic questioning and agent reviews |
 | [`advanced-workflow/data-analysis/`](./advanced-workflow/data-analysis/) | 3-phase data analysis workflow — funnel discovery, ROI modeling, and A/B test readouts |
+| [`advanced-workflow/product-strategy/`](./advanced-workflow/product-strategy/) | 3-phase product strategy workflow — competitive diagnosis, strategic choices, and executive presentation |
 | [`company-context/`](./company-context/) | Templates for giving Claude persistent SentinelOne context — start here before any PRD session |
 
 ---

@@ -30,7 +30,11 @@ This repository serves as a **living knowledge base** for our PM team to:
 │   └── analytics/        # Data interpretation, metric definitions, OKR framing
 │
 ├── workflows/            # Step-by-step Claude Code workflows for common PM tasks
-│   └── basic Workflows/  # 6 ready-to-use templates + quickstart guide
+│   ├── basic-workflows/  # 6 ready-to-use templates + quickstart guide
+│   ├── advanced-workflow/prd-creation/      # Full PRD creation workflow with agent reviews
+│   ├── advanced-workflow/data-analysis/     # Funnel analysis, ROI modeling, A/B test readouts
+│   ├── advanced-workflow/product-strategy/  # 3-phase strategy workflow with Rumelt's Kernel
+│   └── company-context/  # SentinelOne context templates for Claude sessions
 │
 ├── case-studies/         # Real examples of Claude Code used in our PM work
 │
@@ -99,6 +103,7 @@ This repository serves as a **living knowledge base** for our PM team to:
 **Strategy & Analytics**
 | Use Case | Status | Where |
 |---|---|---|
+| Product strategy development | 🟢 Done | `workflows/advanced-workflow/product-strategy/` |
 | OKR & metric definition | 🔵 Planned | `prompts/analytics/` |
 
 ---

@@ -12,6 +12,7 @@ Multi-phase workflows for larger, more complex PM work. Each is a complete syste
 |--------|--------------|------|--------------|
 | [`prd-creation/`](./prd-creation/) | Write a production-quality PRD with Socratic questioning + 3 expert agent reviews | 45–60 min | Yes — 3 sub-agents required |
 | [`data-analysis/`](./data-analysis/) | Analyze funnels and surveys, build ROI models, and read out A/B test results | 30–90 min | No — works out of the box |
+| [`product-strategy/`](./product-strategy/) | Develop a defensible product strategy using Rumelt's Kernel — diagnosis, strategic choices, and executive slide deck | 60–90 min | No — works out of the box |
 
 ---
 
@@ -20,6 +21,7 @@ Multi-phase workflows for larger, more complex PM work. Each is a complete syste
 - **Starting a new feature from scratch?** → Use `prd-creation/`
 - **Have data and need to understand it or justify a decision?** → Use `data-analysis/`
 - **Running an experiment and need a readout?** → Use `data-analysis/` (Phase 3)
+- **Need to develop or present a product strategy?** → Use `product-strategy/`
 
 ---
 
