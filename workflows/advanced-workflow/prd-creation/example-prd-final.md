@@ -1,6 +1,6 @@
-# TaskFlow AI Voice Chat — Product Requirements Document
-**Feature:** AI Voice Chat for Task Management (Combined Version)
-**Strategic Angle:** Dual-mode — Quick Voice + AI Chat
+# [Your Product] AI Investigation Assistant — Product Requirements Document
+**Feature:** AI Investigation Assistant (Natural Language Threat Investigation)
+**Strategic Angle:** Dual-mode — Quick Query + Investigation Chat
 **Status:** Draft
 **Author:** Product Team
 **Last Updated:** 2026-03-11
@@ -13,82 +13,78 @@
 
 ### The Core Problem
 
-Task capture fails at the moment ideas are born.
+Threat investigation breaks down at the moment speed matters most.
 
-Knowledge workers — PMs, engineering managers, marketers — generate their best insights during the messiest moments: walking out of a meeting, commuting, mid-exercise, head-down in a design review. At these moments, the friction of opening an app, navigating to the right project, filling in a task form, and assigning it to the right person is insurmountable. The thought gets filed under "I'll remember later." It doesn't get remembered.
+SOC analysts — especially Tier 1 — face a relentless queue of alerts and must decide in under five minutes whether an alert warrants full investigation or can be closed as a false positive. At that threshold, the friction of pivoting between a SIEM, an EDR console, a threat intelligence feed, and a ticketing system is not just inconvenient — it's operationally disqualifying. Analysts give up. Investigations are abandoned. Real threats go unresolved.
 
 Our research makes this concrete:
 
-- **45% of TaskFlow users report skipping task creation** because the process is too much effort in the moment
-- **"I have my best ideas walking or driving. By the time I get to my desk, I've forgotten half."** — Designer, mid-market SaaS company
-- **"I can articulate things way better when I'm talking than when I'm typing."** — PM, 120-person tech company
+- **60% of investigations started in [Your Product] are abandoned before root cause is determined** — analysts lose the thread mid-investigation while context-gathering
+- **"I had to jump between our SIEM, EDR console, and threat intel feed just to understand basic context on one alert. By the time I had the full picture, 20 minutes were gone."** — Tier 1 SOC Analyst, 8-person security team
+- **"If I could just ask the platform what happened on this endpoint in the last 48 hours and get a coherent answer, I'd close twice as many investigations."** — Threat Hunter, mid-size financial services company
 
-This is not a motivation problem. Users want to capture their work. The interface is the blocker.
+This is not an analyst skill problem. Analysts know what questions to ask. The platform doesn't let them ask those questions directly — they have to approximate through manual queries, tab switching, and copy-pasting from five different UIs.
 
 ### The Opportunity
 
-**62% of TaskFlow users say they want voice input for task creation.** This is one of the highest expressed-demand signals we have seen in any research cycle. Note: this is stated preference data from surveys; behavioral validation is a pre-launch research priority (see Research section). Willingness to pay is equally strong: **81% would pay more for AI features**, with an average uplift tolerance of **$7/user/month**.
+**23% of [Your Product]'s churned customers cited "too manual, not enough AI automation" as their primary reason for leaving.** This is the highest single churn driver in exit survey data and it is accelerating — AI is now table stakes in enterprise security tooling, not a differentiator.
 
-**Revenue projection:** At 850 accounts with an average team size of ~25 users, a conservative 20% conversion to an AI tier at $5/user/month uplift = **~$255K additional ARR** in the first two quarters post-launch. At 30% conversion, that reaches **~$383K**. This directly advances the Q1 goal of reaching $6M ARR (currently at $4.2M).
+**Revenue projection:** At 850 enterprise accounts with an average of 14 analysts per account, a conservative 20% adoption of an AI tier uplift at $5/seat/month = **~$287K additional ARR** in the first two quarters post-launch. At 40% adoption, that reaches **~$574K**. This directly advances the target of reaching $6M ARR (currently at $4.2M).
 
-Beyond user demand, there is a strategic window. Asana launched AI features in November 2024, and Linear, Notion, and ClickUp are all adding AI capabilities. Most of these implementations are text-only and additive. More critically: **23% of TaskFlow's churned customers cited missing features as their primary reason for leaving** — and Asana's AI launch creates a direct retention and deal-loss risk that compounds every month we wait. TaskFlow has an opportunity to leapfrog on both offense (new AI positioning) and defense (churn mitigation).
+Beyond user demand, there is a strategic window that is closing. CrowdStrike launched Charlotte AI and it is live in customer environments now. Microsoft Copilot for Security is broadly available. Palo Alto's Cortex Copilot is shipping. **18% of prospects in Q4 pipeline evaluations mentioned AI capabilities in eval criteria** — and that number is growing quarter over quarter. [Your Product] has the investigation telemetry, endpoint behavioral data, and alert correlation context that competitors are attempting to synthesize from weaker data sources. The moat is the data. But the interface to that data needs to be natural language.
 
-The mobile experience compounds the opportunity. TaskFlow's mobile app is currently read-only and inadequate for creation workflows. A voice-native interface bypasses the need to rebuild a traditional mobile creation flow entirely — it makes mobile the best place to capture tasks.
+Every month without AI investigation capability is a month where CrowdStrike Charlotte AI can be used as a wedge in competitive deals, and a month where the 23% churn-from-missing-AI signal compounds.
 
 ### Why Now
 
-Q1 is TaskFlow's AI launch window. Competitors are moving, churned customers are citing missing features, and the 23% churn-from-missing-features signal means delay has a measurable dollar cost. Every month without AI features is a month where Asana and ClickUp can use their AI launch as a wedge in competitive deals.
+Q2 is [Your Product]'s AI launch window. The competitive signal is live (not projected), churned customers are citing the missing capability explicitly, and building now allows us to iterate on real investigation workflows before competitors solidify their AI UX conventions.
 
-**Capacity trade-off:** This feature requires the Core Platform squad (~4 engineers) for 10–11 weeks, and the Mobile squad for the Quick Voice surface. The primary displacement is the enterprise readiness work (SSO, advanced permissions) also on the Q1 roadmap. Recommendation: timebox enterprise readiness to 3-week sprints in parallel with AI Chat build; SSO can ship in Q2 without competitive consequence. AI features cannot wait.
+**Capacity trade-off:** This feature requires the Core Platform squad (~4 engineers) for 10–12 weeks and data infrastructure work to expose behavioral history and correlated context via the AI query layer. The primary displacement is the compliance reporting module also on the Q2 roadmap. Recommendation: timebox compliance reporting to a 3-week parallel sprint; SOC compliance exports can ship in Q3 without competitive consequence. AI investigation cannot wait.
 
 ---
 
 ## High Level Approach
 
-We will ship a **dual-mode AI voice feature** embedded natively in TaskFlow's mobile and web experiences. Rather than forcing users into a single AI interaction model, we offer two complementary modes:
+We will ship a **dual-mode AI Investigation Assistant** embedded natively in [Your Product]'s alert and investigation surfaces. Rather than a single AI interaction model, we offer two complementary modes designed for distinct SOC workflows:
 
-**Mode 1 — Quick Voice:** Tap a microphone button, speak one task, done in under 5 seconds. Minimal UI, maximum speed. Built for users on the move. The AI parses speech into a structured task — title, assignee, due date, project — and creates it instantly.
+**Mode 1 — Quick Query:** An analyst opens an alert and asks a single natural language question about it — "What other endpoints communicated with this IP in the last 24 hours?" — and gets an answer instantly, inline, without leaving the alert view. Designed for Tier 1 triage. Zero context-switching. The AI queries [Your Product]'s telemetry and returns a structured answer with supporting evidence.
 
-**Mode 2 — AI Chat:** An ongoing conversational interface where users plan, organize, and think through multiple tasks at once. Users describe a situation ("We have a launch next week and I need to make sure nothing falls through the cracks"), and the AI helps decompose it into tasks, asks clarifying questions, and adds everything to the appropriate project.
+**Mode 2 — Investigation Chat:** A persistent conversational session where analysts run a full multi-turn investigation. They can ask follow-up questions, narrow scope, pivot hypotheses, and build toward root cause through dialogue. Session state is preserved across the investigation lifecycle. Designed for Tier 2 analysts and threat hunters doing deep-dive work.
 
-Both modes co-exist. A manager doing sprint planning reaches for Chat. A PM on a commute reaches for Quick Voice. The same feature serves both without forcing a choice. The toggle between modes is a single tap.
+Both modes co-exist. A Tier 1 analyst triaging 80+ alerts per day reaches for Quick Query. A threat hunter investigating a suspected lateral movement campaign reaches for Investigation Chat. The same feature serves both personas without forcing a workflow compromise. The toggle between modes is a single tap from within the investigation view.
 
 **What alternatives did we consider?**
 
 | Approach | Why Not Selected |
 |---|---|
-| Voice-only, no chat | Misses the high-value planning use case for power users |
-| Chat-only, no quick voice | Fails the commute/hands-free capture use case entirely |
-| List-first only (mic on task list) | Lower learning curve but doesn't serve deeper planning sessions |
-| Full AI assistant (meeting transcription, multi-language, voice playback) | 6+ months, high risk, kills Q1 deadline |
+| Quick Query only, no Chat | Misses the high-value deep investigation use case for Tier 2 and threat hunters |
+| Investigation Chat only, no Quick Query | Fails the Tier 1 triage use case — Chat is too slow for 5-minute triage windows |
+| Contextual tooltips and auto-correlation only | Lower AI bar; doesn't enable natural language queries; doesn't address the question-answering need |
+| Full autonomous investigation and response | 12+ months, high risk, requires policy and compliance framework not yet in place; kills Q2 deadline |
 
-We landed on the balanced dual-mode approach because user research reveals two distinct jobs-to-be-done — fast capture and conversational planning — both large and underserved. A feature that serves only one leaves users with a reason to still reach for a competitor.
+We landed on the dual-mode approach because SOC workflows split cleanly across two jobs-to-be-done: fast triage (Tier 1, under 5 minutes per alert) and deep investigation (Tier 2 and hunters, 30-90 minutes per campaign). A feature that serves only one leaves the other persona with a reason to reach for a competing platform.
 
 ---
 
 ### Narrative
 
-**Scenario A — The PM on a commute (Quick Voice)**
+**Scenario A — The Tier 1 Analyst under alert pressure (Quick Query)**
 
-Alicia is a Product Manager at a 120-person tech company. She's walking to a coffee meeting when three follow-ups hit her from yesterday's engineering sync. By the time she sits down, she'll have forgotten two of them.
+Maya is a Tier 1 SOC analyst. She's processing her fourth hour of alert queue and encounters a suspicious outbound connection alert on a Windows endpoint. She needs to decide in under 5 minutes: escalate or close.
 
-With Quick Voice, she opens TaskFlow, taps the mic icon, and says: "Remind me to schedule the user research debrief with Marcus by Thursday." Task created. She does it twice more for the other two. She reaches her meeting with everything captured.
+With Quick Query, she opens the alert in [Your Product] and types: "Has this endpoint made outbound connections to non-standard ports in the past 7 days?" The AI returns a structured response with three matching events from the last 48 hours, including timestamps, destination IPs, and threat intel context. Maya escalates immediately.
 
-No typing. No app switching. No "I'll remember later."
+No tab switching. No SIEM query syntax. No manual copy-paste from the EDR console.
 
-**Scenario B — The EM doing sprint planning (AI Chat)**
+**Scenario B — The Threat Hunter running a deep investigation (Investigation Chat)**
 
-Daniel is an Engineering Manager. It's Monday morning and he needs to set up the new sprint. He normally spends 30 minutes writing tasks manually from his notes.
+Carlos is a threat hunter investigating a suspected lateral movement campaign. He has a starting alert — a failed authentication flood on a domain controller — but the scope is unclear.
 
-He opens AI Chat and types: "We're starting a new sprint today. We need to finish the authentication flow, fix the 3 high-priority bugs from last sprint, do code review for the payments PR, and sync with design on the new onboarding flow before Wednesday."
+He opens Investigation Chat and begins: "Show me all authentication events from this source IP in the last 72 hours across all assets." The AI responds with a summary and a timeline. Carlos follows up: "Which of those destination endpoints have had unusual process executions in the same timeframe?" The AI cross-references behavioral history and returns three candidate endpoints. Carlos continues the conversation for 45 minutes, building the full attack chain through dialogue rather than manual SIEM queries.
 
-The AI replies: "Got it — I created 5 tasks from that. Should I assign these to the same team members as last sprint?" Daniel confirms. Two minutes, sprint set up.
+**Scenario C — Mode switching in a live investigation**
 
-**Scenario C — The edge case (mode switching)**
-
-Priya is an engineering manager walking out of a 45-minute design sync. She opens TaskFlow on her phone. She's mid-way through a Chat session planning next week's work — but she needs to capture two immediate tasks from the sync before she forgets them.
-
-She taps the Quick Voice toggle without closing Chat, captures two fast tasks while walking to her car, and picks Chat back up where she left off. The session persisted. Nothing was lost.
+Maya is reviewing her escalation queue after finishing triage. She opens an escalated alert and starts a Quick Query to check scope. The answer surprises her — eight endpoints, not one. She taps "Deepen this investigation" and her Quick Query context carries directly into an Investigation Chat session. She doesn't re-explain what she was investigating. The conversation begins from where her query left off.
 
 This is the experience we are building.
 
@@ -96,21 +92,22 @@ This is the experience we are building.
 
 ## Goals
 
-The following metrics define success for V1. All measured at 60 days post-launch across active users (logged in at least once in the trailing 30 days).
+The following metrics define success for V1. All measured at 60 days post-launch across active analysts (logged in at least once in the trailing 30 days).
 
 | Goal | Metric | Target | Why This Number |
 |---|---|---|---|
-| Adoption — Awareness | % of active users who try voice/chat feature | 20% within first 30 days | Conservative given behavior change required; tests discoverability |
-| Adoption — Retention | % of tryers who use it weekly | 10% at 60 days | Weekly usage = habit signal, not novelty |
-| Quality | Completion rate of voice-created tasks vs. typed tasks | Parity (within 5 percentage points) | If voice tasks are abandoned at higher rates, AI is capturing noise, not intent |
-| Mobile Capture | % of new tasks created on mobile | +15pp from current baseline | Voice makes mobile creation viable for the first time |
-| Revenue Signal | Conversion to AI add-on tier (if launched) | Establish baseline; target 15% of Pro accounts | Validates $7/user/month willingness-to-pay signal |
+| Adoption — Awareness | % of active analysts who try Quick Query or Investigation Chat | 25% within first 30 days | Conservative given workflow change required; tests discoverability in alert view |
+| Adoption — Retention | % of tryers who use it weekly | 15% at 60 days | Weekly usage = habit signal, not novelty |
+| Investigation Completion | Investigation completion rate (root cause determined) | 40% → 58% (+18pp) | Primary product metric; validated by experiment phase |
+| Speed | Median time-to-root-cause for completed investigations | 47 min → 22 min | Analyst capacity multiplier; validated in experiment (-25 min, 53% faster) |
+| Analyst Capacity | Alerts handled per analyst per day | 80 → 130 | Capacity expansion signal; downstream from speed improvement |
+| Revenue Signal | Conversion to AI tier (if launched) | Establish baseline; target 20% of accounts | Validates $5/seat/month uplift model |
 
 **Guardrail metrics (must not regress):**
-- Task creation rate must not decrease
-- New user time-to-first-task must not increase
-- AI field extraction accuracy must reach ≥85% in beta before GA rollout
-- AI latency: p95 < 2 seconds for Quick Voice (measured from end-of-speech detection to toast confirmation appearing), p95 < 3 seconds for Chat responses (measured from message send to AI reply visible)
+- Investigation completion rate must not decrease among any segment
+- Alert queue processing time must not increase vs. baseline
+- AI response accuracy (validated answer vs. ground truth from telemetry) must reach ≥90% in beta before GA rollout
+- AI latency: p95 < 3 seconds for Quick Query (measured from query submit to response visible), p95 < 5 seconds for Investigation Chat responses
 
 ---
 
@@ -120,15 +117,15 @@ The following are explicitly out of scope for V1. Each is a deliberate decision,
 
 | Non-goal | Rationale |
 |---|---|
-| Voice playback / text-to-speech responses | Adds complexity, accessibility edge cases, ambient environment problems; AI responds in text in V1 |
-| Meeting transcription and automatic task extraction | Distinct product surface requiring integrations (Zoom, Meet, etc.); planned for V2 |
-| Multi-language support | English-only in V1; internationalization requires significant LLM tuning and QA |
-| Offline mode / local processing | Network dependency acceptable for V1; offline adds architectural complexity that delays launch |
-| Custom voice commands or wake words | Users speak naturally; TaskFlow infers structure — no command grammar |
-| Editing or updating existing tasks via voice | V1 is capture-only; modification flows are V2 |
-| AI-generated task prioritization or triage | AI creates tasks from input but does not reorder or score the backlog in V1 |
-| Integrations with external tools (Slack, email, calendar) | V1 is TaskFlow-native only |
-| Voice-to-comment or voice-to-message | This PRD covers task creation only |
+| Autonomous threat response or remediation | V1 is analyst-assist, not autopilot; autonomous response requires a separate policy and compliance framework |
+| External threat hunting integrations (VirusTotal, Shodan, etc.) | V1 queries [Your Product]'s internal telemetry only; external enrichment is V2 |
+| Compliance report generation | Different persona, different use case; not a SOC workflow need; planned separately |
+| Multi-language support | English-only in V1; internationalization requires significant LLM tuning and QA for security vocabulary |
+| Voice input for investigations | Text-first in V1; voice adds complexity for SOC environments (open-plan offices, recordings policies) |
+| Proactive AI alerting or push summaries | V1 is pull-based (analyst asks); proactive AI is V2 |
+| Custom AI playbooks or user-defined prompt templates | High value but high complexity; V2 after we understand how analysts naturally query the system |
+| AI-generated executive or board reports | Separate stakeholder need; not part of analyst workflow |
+| Integration with third-party SIEM or EDR for query execution | V1 queries [Your Product] telemetry only; external SIEM integration is a separate platform initiative |
 
 ---
 
@@ -138,161 +135,160 @@ The following are explicitly out of scope for V1. Each is a deliberate decision,
 
 ### Plan of Record (V1)
 
-**1. Quick Voice capture (P0)**
-A persistent microphone button accessible from the TaskFlow home screen and task list on mobile and web. Tap to start, speak to capture. AI parses natural language into a structured task (title, project, assignee, due date, priority) and creates it in the correct location. Target: under 5 seconds for a simple task. A non-blocking toast confirmation appears after creation with a one-tap Edit option.
+**1. Quick Query (P0)**
+A persistent natural language query input accessible from any alert view. Analyst types a question in plain English; the AI queries [Your Product]'s telemetry, behavioral history, and correlated alert data and returns a structured answer with supporting evidence inline. No query syntax required. Target: answer visible in under 3 seconds. Includes a one-tap "Expand to Investigation Chat" option to deepen any Quick Query into a full investigation session.
 
-**2. AI Chat interface (P0)**
-A dedicated chat panel (slide-up modal on mobile, side panel on web) where users have multi-turn conversations with the AI to plan and create multiple tasks at once. Maintains session state for 24 hours. Supports text and voice input within the same window.
+**2. Investigation Chat interface (P0)**
+A persistent investigation panel (slide-out drawer in the alert view, full-page on dedicated investigation screens) where analysts conduct multi-turn conversational investigations. Maintains full session state throughout the investigation lifecycle. Supports text input. AI responses include supporting telemetry data, timestamps, affected assets, and suggested follow-up questions.
 
 **3. Mode toggle (P0)**
-A single-tap toggle that switches between Quick Voice and AI Chat from within either interface. Switching modes does not disrupt an active Chat session — it is preserved and resumed when the user returns.
+A single-tap toggle between Quick Query and Investigation Chat within the investigation view. Switching to Quick Query does not end an active Chat session — it is preserved and resumed. Quick Query context can be promoted to Investigation Chat at any time, carrying prior query and response.
 
-**4. Task confirmation and editing (P1)**
-Quick Voice: non-blocking toast with "Edit" tap target. AI Chat: explicit confirmation step before any task creation — the AI surfaces all proposed tasks for review and the user approves (or edits) before anything is created.
+**4. Evidence citations (P0)**
+Every AI response includes inline citations to the underlying telemetry events, alert records, or threat intel matches that informed the answer. Analysts can click any citation to view the raw source. This is non-negotiable: SOC analysts cannot act on AI output they cannot verify. Uncited responses are not acceptable in V1.
 
-**5. Context awareness (P1)**
-The AI uses the project/board the user most recently viewed as the default context for task creation. "Most recently viewed" is stored as a per-user, per-device session value updated on every project navigation event. Cross-device sync is out of scope for V1 — if no context is available (new user, fresh install), the AI defaults to the user's personal inbox and notes the placement in the confirmation. Context can be overridden explicitly ("add this to the Engineering sprint instead").
+**5. Suggested follow-up questions (P1)**
+After each Investigation Chat response, the AI surfaces 2-3 suggested follow-up questions based on the current investigation context. These are starting points, not prescriptions — analysts are free to ask anything. Designed to reduce the blank-canvas problem for Tier 1 analysts who know something is wrong but aren't sure how to proceed.
 
-**6. Disambiguation and clarification (P1)**
-When the AI cannot confidently determine a field, it asks a focused clarifying question — one at a time, never an interrogation.
+**6. Session persistence and handoff (P1)**
+Investigation Chat sessions persist for the lifetime of an associated incident. If an analyst is reassigned or hands off an investigation to a colleague, the full chat history transfers with the incident. Handoff recipients can read the prior conversation and continue from where the previous analyst left off. Solves the institutional memory problem on shift handovers.
 
-**7. Multi-task decomposition in Chat (P1)**
-When a user describes a complex goal, the AI proposes a structured breakdown and presents all tasks for review before creating. Users can approve all, edit individual items, or remove tasks from the set.
+**7. Investigation summary export (P1)**
+Analysts can export a structured investigation summary at any point — a formatted document containing the investigation timeline, key findings from AI responses, cited telemetry events, and analyst-authored notes. Intended for escalation documentation and incident records, not executive reporting.
 
-**8. Delegation support (P1)**
-Both Quick Voice and Chat explicitly support assigning tasks to others — this is a primary use case for managers, not just personal capture. "Assign the homepage copy review to Jordan by Friday" is a first-class interaction. Assignee resolution follows the same name-matching logic as personal tasks, with disambiguation when multiple workspace members share a name. Error recovery for wrong-assignee is elevated to blocking (not toast-only): if the AI assigns to a person who will receive a notification, the confirmation step must clearly surface the assignee name before creation.
+**8. Analyst feedback on AI responses (P1)**
+Thumbs up / thumbs down on every AI response, with an optional free-text field. Negative feedback flags the response for review. This is the primary mechanism for improving AI accuracy in production. Feedback data scoped per-account; [Your Product] does not use individual analyst feedback for model training without explicit opt-in (V1 default: opt-out).
 
-**9. New user onboarding (P2)**
-Users with fewer than 5 tasks created in TaskFlow are shown a guided first-use experience: a pre-filled example phrase and a brief walkthrough of the confirmation flow. This addresses the cold-start problem where the AI has little workspace context to draw on. New users also see a more conservative AI behavior: when project context is ambiguous, the AI always asks rather than inferring, until the user has established sufficient workspace history.
+**9. New analyst onboarding for AI (P2)**
+Analysts with fewer than 10 investigations completed in [Your Product] see a guided first-use flow: example queries pre-populated in Quick Query, a brief walkthrough of how to read an AI response with citations. Addresses the cold-start problem where the AI has limited behavioral context for new accounts. New analyst mode also applies more conservative AI behavior: when data is ambiguous, the AI qualifies its answer rather than inferring.
 
 ### Future Considerations (V2+)
 
-- Voice input within the Chat panel (full hands-free Chat)
-- Editing existing tasks via voice
-- Meeting transcription to task generation
-- Multi-language support
-- Suggested tasks based on behavioral patterns
-- Slack / calendar integration for richer Chat context
+- Voice input for Investigation Chat
+- External enrichment queries (VirusTotal, Shodan, MITRE ATT&CK mapping)
+- Proactive AI investigation summaries pushed to analysts on high-severity alerts
+- Custom investigation playbooks and prompt templates
+- AI-assisted hypothesis generation based on historical campaign patterns
+- Cross-account anonymized threat intelligence sharing via AI context
 
 ---
 
 ### Key Flows
 
-**Flow 1: Quick Voice — New Task (Primary Mobile Flow)**
+**Flow 1: Quick Query — Single Alert Question (Primary Triage Flow)**
 
 ```
-User opens TaskFlow mobile
-→ Taps persistent mic icon in bottom nav
-→ Full-screen listening UI appears; waveform animation plays
-→ User speaks task naturally
-→ Silence detected (1.5 sec threshold) OR user taps stop
-→ Processing indicator (<2 seconds)
-→ Non-blocking toast: "Follow up with design team — Fri — High | Edit?"
-→ Task created in current project context
-→ User returns to previous screen
+Analyst opens alert in [Your Product]
+→ AI Query input visible in alert sidebar (placeholder: "Ask about this alert...")
+→ Analyst types: "Has this endpoint connected to external IPs on non-standard ports
+   in the last 7 days?"
+→ Analyst submits query
+→ Processing indicator (<3 seconds)
+→ AI response appears inline with:
+   - Direct answer ("Yes — 3 connections found")
+   - Summary table: timestamp, destination IP, port, protocol
+   - Inline citation links to underlying telemetry events
+   - Suggested follow-ups: "View all endpoints that connected to these IPs"
+→ Analyst acts: escalates, closes, or taps "Expand to Investigation Chat"
 ```
 
 Error states:
-- Name not resolved → AI asks "Which Sarah — Chen or Williams?"
-- Project ambiguous → "Q1 Roadmap or Stakeholder Comms?"
-- No due date → Task created without due date; blank field is better than a wrong date
-- Voice recognition fails → Text input fallback surfaces immediately
+- No relevant data found → AI states clearly: "No events matching this query in the selected timeframe. Try extending the window or broadening the scope."
+- Query too ambiguous → AI asks one clarifying question: "Are you asking about this specific endpoint, or all endpoints in the affected subnet?"
+- Telemetry data unavailable → Clear error with explanation; fallback to manual investigation link
+- Latency exceeds 5 seconds → Loading state with cancel option; no silent hang
 
 ---
 
-**Flow 2: AI Chat — Sprint Planning Session**
+**Flow 2: Investigation Chat — Lateral Movement Campaign**
 
 ```
-User taps Chat icon in bottom nav
-→ Slide-up Chat panel opens
-→ User types (or speaks): "Starting sprint 14. Need to finish auth flow,
-   fix top 3 bugs, get payments PR reviewed before Wednesday."
-→ AI proposes task list with assignments and due dates
-→ AI: "Should I assign to same team as last sprint?"
-→ User: "Yes, and add a design sync for onboarding — Tuesday."
-→ AI confirms set of 6 tasks; asks user to approve
-→ User taps "Create all"
-→ Sprint set up. AI shows summary.
-→ User dismisses Chat panel
-```
-
----
-
-**Flow 3: Mode Switch Mid-Session**
-
-```
-User is in active AI Chat session (mid-conversation)
-→ User needs to capture one fast task
-→ Taps "Quick Voice" toggle in Chat panel header
-→ Quick Voice fullscreen opens; Chat session preserved in background
-→ User speaks one task → Task created
-→ User returned to Chat panel exactly where they left off
+Analyst opens high-severity alert: "Suspicious authentication — domain controller"
+→ Taps "Start Investigation" → Investigation Chat panel opens
+→ Analyst: "Show me all authentication events from this source IP in the last 72 hours."
+→ AI returns: timeline summary, 47 events across 12 destination endpoints, cited telemetry
+→ Analyst: "Which of those destination endpoints had unusual process executions
+   in the same window?"
+→ AI cross-references behavioral history: 3 endpoints flagged with anomalous
+   process trees, cited with PIDs and timestamps
+→ Analyst: "Is any of these endpoints a critical asset?"
+→ AI returns risk scores and asset classifications for all 3 (2 high-risk servers)
+→ Analyst escalates; taps "Export Summary" for incident ticket
+→ Summary auto-populated with investigation timeline and key findings
 ```
 
 ---
 
-**Flow 4: Ambiguous Input**
+**Flow 3: Mode Switch — Quick Query to Investigation Chat**
 
 ```
-User speaks: "Add a task for the thing Marcus and I discussed"
-→ AI: "What's the task?" (one clarifying question)
-→ User: "Send the Q1 roadmap draft to the exec team"
-→ AI: "Which project — Q1 Roadmap or Stakeholder Comms?"
-→ User: "Q1 Roadmap"
-→ Task created; toast confirmation
+Analyst is triaging alert via Quick Query
+→ Receives answer: "8 endpoints affected, not 1"
+→ Taps "Expand to Investigation Chat"
+→ Chat panel opens with prior query and response pre-loaded as context
+→ AI: "Based on your query, here are suggested next steps: [3 options]"
+→ Analyst continues investigation without re-stating context
+→ Chat session linked to incident; persists through shift handover
+```
+
+---
+
+**Flow 4: Shift Handover — Session Persistence**
+
+```
+Analyst A has been investigating a campaign for 2 hours via Investigation Chat
+→ Shift ends; incident reassigned to Analyst B
+→ Analyst B opens incident in [Your Product]
+→ Investigation Chat panel shows full prior conversation history
+→ AI: "Investigation was last updated 2h ago. Summary: [3-sentence brief]"
+→ Analyst B picks up exactly where Analyst A left off
 ```
 
 ---
 
 ### Key Logic
 
-**Parsing and task creation rules:**
+**Query execution and response rules:**
 
 | Scenario | Behavior |
 |---|---|
-| User is inside a project when invoking the AI | Default project = current project (user can override) |
-| Assignee not specified | Quick Voice: task created unassigned; Chat: AI asks |
-| Due date not specified | Left blank — never defaulted to today |
-| Multiple matches for a name | AI asks to disambiguate (one question per entity) |
-| No project match found | Task goes to user's inbox; AI notes it |
-| Priority not stated | Defaults to "None" unless high-signal words used ("urgent," "ASAP," "blocking") |
+| Analyst is inside an alert when invoking Quick Query | Query context defaults to that alert's associated assets and timeframe |
+| Query covers assets analyst does not have access to | AI returns only data within analyst's permission scope; notes any scope limitation |
+| Timeframe not specified in query | AI defaults to alert timestamp ±24 hours; notes the assumption in the response |
+| Query is ambiguous | AI asks one clarifying question before executing; never executes on ambiguous queries |
+| No relevant telemetry data exists | AI states clearly that no data was found; does not fabricate or infer |
+| Alert involves assets not yet ingested | AI surfaces a warning; responds based on available data |
 
-**Confidence thresholds:**
-- **>90% match** — resolve silently; show in confirmation for review
-- **50–90%** — include best guess with note ("Assuming Checkout Redesign — correct?")
-- **<50%** — ask explicitly before generating confirmation
+**Confidence and citation rules:**
+- **Every AI response includes citations** — no uncited responses in V1; if data cannot be cited, the AI states it cannot answer with confidence
+- **>90% confidence** — respond directly with citations
+- **50–90% confidence** — qualify the response ("Based on available data, this appears to be...") with citations
+- **<50% confidence** — AI states it cannot determine an answer and suggests what additional data would help
 
-**Chat session rules:**
-- Sessions persist 24 hours of inactivity; then cleared with user notification
-- No tasks created in Chat without explicit user confirmation
-- AI asks at most one clarifying question per turn
-- If AI is uncertain about multiple fields, creates task with confident fields and flags uncertain ones
+**Investigation Chat session rules:**
+- Sessions persist for the lifetime of the associated incident; no arbitrary expiration
+- No actions taken without analyst confirmation (AI queries data; it does not take remediation actions)
+- AI surfaces at most 2-3 suggested follow-ups per turn — not a required path
+- Session history transferable to any analyst with access to the incident
 
 **Chat session storage architecture:**
-- Sessions stored server-side, scoped per user (not per device)
-- Storage: conversation turns stored as JSON in the existing TaskFlow database; estimated ~2–5KB per session
-- Retention: sessions auto-deleted after 24 hours of inactivity; no long-term conversation history in V1
-- At 850 accounts × average 25 users × 10% using Chat daily = ~2,125 active sessions/day; well within current DB capacity
+- Sessions stored server-side, scoped per incident (not per analyst or device)
+- Storage: conversation turns stored as structured JSON in [Your Product]'s existing data layer; estimated 5–20KB per session depending on response complexity
+- Retention: sessions retained for the lifetime of the associated incident plus 90 days post-closure for audit purposes
+- At 850 accounts × average 14 analysts × 15% using Chat daily = ~1,785 active sessions/day; within current infrastructure capacity
 - Engineering to confirm storage model before Chat build begins (Week 7)
 
-**Mode toggle rules:**
-- Switching to Quick Voice does not end Chat session
-- Returning to Chat resumes the previous session
-- Closing the app during a Chat session preserves it (within 24-hour window)
-
-**Voice input processing:**
-- Uses device native speech-to-text (iOS: SFSpeechRecognizer, Android: SpeechRecognizer, Web: Web Speech API)
-- Transcription streamed in real-time to the UI
-- Silence detection: 1.5 seconds triggers auto-submit
-- Raw transcription shown before AI processing; user can edit text before submitting
-- If voice recognition fails, text input fallback surfaces immediately — no dead-end error screen
+**AI response scope and data access:**
+- AI queries [Your Product]'s internal telemetry, behavioral history, correlated alerts, and threat intel matches only
+- No outbound queries to third-party services in V1
+- Responses scoped to the analyst's account and permission level; no cross-account data exposure
+- All queries and responses logged for audit trail; retained per account data retention policy
 
 **Privacy and data handling:**
-- Voice audio processed on-device by OS speech-to-text; TaskFlow does not receive or store raw audio
-- Text transcriptions and chat messages transmitted to TaskFlow's AI backend over HTTPS
-- Workspace context scoped to user's accessible data only
-- AI conversation content not used for model training without explicit opt-in (V1 default: opt-out)
-- Audio discarded immediately after transcription — never stored
+- Investigation Chat content transmitted to [Your Product]'s AI backend over HTTPS with TLS 1.3
+- Workspace telemetry data used for AI query execution is scoped to the analyst's accessible data
+- AI conversation content not used for model training without explicit account-level opt-in (V1 default: opt-out)
+- All query and response data retained per [Your Product]'s standard enterprise data retention policy; configurable per account
 
 ---
 
@@ -303,103 +299,117 @@ User speaks: "Add a task for the thing Marcus and I discussed"
 | Milestone | Target Date | Owner |
 |---|---|---|
 | PRD finalized and approved | Week 1 | PM |
-| Legal/privacy review of audio data policy | Week 2 | Legal + PM |
+| Legal/privacy/compliance review of AI data handling | Week 2 | Legal + PM |
 | Technical spec complete | Week 3 | Engineering Lead |
-| Design: Quick Voice UI, Chat panel, mode toggle | Week 3–4 | Design |
-| Quick Voice — internal build (iOS + Android) | Week 5–7 | Mobile Squad |
-| AI Chat — internal build | Week 7–9 | Core Platform Squad |
-| Mode toggle + full integration | Week 10 | Engineering |
-| Internal QA + edge case testing | Week 10–11 | QA + PM |
-| Closed beta (25–50 accounts) | Week 12–13 | PM + CS |
-| Beta feedback synthesis + critical fixes | Week 13–14 | PM + Engineering |
-| General availability launch | Week 15 | Full team |
-| 30-day post-launch metrics review | Week 19 | PM |
+| Design: Quick Query UI, Investigation Chat panel, citation components | Week 3–4 | Design |
+| Quick Query — internal build | Week 5–7 | Core Platform Squad |
+| Investigation Chat — internal build | Week 7–10 | Core Platform Squad |
+| Mode toggle + session persistence + handover flow | Week 10–11 | Engineering |
+| Internal QA + accuracy testing vs. ground truth telemetry | Week 11–12 | QA + PM |
+| Closed beta (15–25 accounts, mid-size teams priority) | Week 13–14 | PM + Customer Success |
+| Beta feedback synthesis + critical fixes | Week 14–15 | PM + Engineering |
+| General availability launch | Week 16 | Full team |
+| 30-day post-launch metrics review | Week 20 | PM |
 
 ## Operational Checklist
 
-**Legal / Privacy:**
-- [ ] Update privacy policy to reflect audio processing and data handling
-- [ ] Confirm audio is not stored post-processing; legal review of AI provider data terms
-- [ ] GDPR compliance review for EU customers
-- [ ] Workspace member data (names, project names) sent to AI covered under existing DPA
+**Legal / Compliance:**
+- [ ] Update privacy policy to reflect AI query processing and conversation data handling
+- [ ] Confirm conversation data is not used for model training by default; document opt-in path
+- [ ] GDPR compliance review for EU accounts (data residency for conversation logs)
+- [ ] SOC 2 audit trail: confirm AI query and response logging meets audit requirements
+- [ ] Review AI provider data processing terms; confirm no training on customer data
 
 **Engineering / Infrastructure:**
-- [ ] Select voice-to-text provider (evaluate: Whisper API, Google Speech-to-Text, Deepgram)
-- [ ] Select NLP field extraction model (evaluate: GPT-4o vs. Claude for structured entity extraction)
-- [ ] Define latency SLOs: Quick Voice p95 <2s; Chat p95 <3s
-- [ ] Instrument full voice funnel event tracking
-- [ ] Build offline state detection and graceful degradation
-- [ ] Define rollout flag for percentage-based rollout (start at 10%)
+- [ ] Select LLM provider and confirm data handling terms (evaluate: GPT-4o, Claude, Gemini for security query accuracy)
+- [ ] Build telemetry query layer that AI can execute against safely (read-only, scoped to account)
+- [ ] Define latency SLOs: Quick Query p95 <3s; Investigation Chat p95 <5s
+- [ ] Instrument full AI usage funnel: query submitted, response received, citation clicked, feedback submitted, session exported
+- [ ] Build account-level opt-in/opt-out for AI training data
+- [ ] Define rollout flag for percentage-based rollout (start at 5% of accounts)
 
 **Design:**
-- [ ] Quick Voice: mic button, listening UI, waveform, toast confirmation
-- [ ] Chat: panel, conversation thread, task confirmation cards, multi-task review
-- [ ] Mode toggle UX
-- [ ] Permission denied, offline, and error states
+- [ ] Quick Query: input field, loading state, response card with citations, suggested follow-ups
+- [ ] Investigation Chat: panel, conversation thread, evidence citation cards, session summary, export flow
+- [ ] Mode toggle UX within investigation view
+- [ ] Handover state: how prior session history is presented to incoming analyst
+- [ ] Error states: no data, ambiguous query, permission scope warning, latency timeout
 
 **Marketing / GTM:**
-- [ ] Launch announcement email to all 850 accounts
-- [ ] 30-second demo video of both Quick Voice and AI Chat
-- [ ] Sales battlecard update: voice AI differentiator vs. Asana, Linear, ClickUp
-- [ ] Pricing page update if gated to Pro/AI tier
+- [ ] Launch announcement to all 850 accounts
+- [ ] Demo video: Quick Query triage flow + Investigation Chat lateral movement campaign example
+- [ ] Sales battlecard: AI Investigation Assistant vs. CrowdStrike Charlotte AI, Microsoft Copilot for Security, Palo Alto Cortex Copilot
+- [ ] Pricing page update if gated to AI tier
+- [ ] Case study plan: identify 2-3 beta accounts willing to share investigation time metrics
 
 **Customer Success:**
-- [ ] Help center: Quick Voice setup, AI Chat walkthrough, permissions troubleshooting
-- [ ] Support team training on common errors
-- [ ] In-app feedback mechanism (thumbs up/down on task confirmations)
+- [ ] Help center: Quick Query usage, Investigation Chat walkthrough, session handover, export guide
+- [ ] Support team training on common AI response errors and escalation path
+- [ ] In-app feedback mechanism (thumbs up/down on every AI response)
+- [ ] Beta customer success check-ins scheduled (bi-weekly during beta period)
 
 ## Risks and Mitigations
 
 | Risk | Likelihood | Impact | Mitigation |
 |---|---|---|---|
-| AI field extraction accuracy below 85% | Medium | High | Hard gate on beta → GA. Delay if not met. |
-| Voice latency exceeds 2s on 4G | Medium | High | Test on real-world networks in beta; fallback to spinner; optimize API calls |
-| Users don't discover Quick Voice | Medium | Medium | In-app tooltip on first login; onboarding prompt; email campaign |
-| Mic permission denial creates friction | Medium | Medium | Just-in-time permission (only on first tap); clear value explanation before request |
-| Chat creates unwanted tasks | Low | High | Mandatory confirmation before any task creation in Chat; no background auto-creation |
-| Competitor ships similar feature before us | High | Medium | Stay on Q1 timeline; differentiate on dual-mode flexibility, not just feature presence |
+| AI response accuracy below 90% | Medium | High | Hard gate on beta → GA. Delay if not met. Define test set of ground-truth queries before build begins. |
+| AI response latency exceeds 3s for Quick Query | Medium | High | Test on real-world telemetry volumes in beta; optimize query layer before GA |
+| Analysts don't trust AI-cited answers | Medium | High | Evidence citations are non-negotiable in V1; every response must cite sources |
+| Enterprise accounts experience workflow disruption | Medium | Medium | Exclude enterprise from initial rollout; start enterprise-specific discovery in parallel |
+| Analysts use AI output without verification and miss errors | Low | High | Feedback mechanism + analyst training; monitoring for false negative rate post-launch |
+| Competitor ships materially better AI investigation feature before GA | High | Medium | Stay on Q2 timeline; differentiate on citation quality and session handover — capabilities Charlotte AI does not have at launch |
 
 ---
 
 ## Open Questions
 
-1. **Pricing — RESOLVED:** AI Voice Chat launches included in all paid plans (Starter, Pro, Enterprise) for V1. Rationale: maximizing adoption data is more valuable than early revenue signal; gating creates a two-tier team experience that fragments adoption and generates support noise. Advanced AI features (proactive suggestions, meeting transcription, cross-tool integrations) will be gated to a paid AI tier in V2. This recommendation is final — not a question for leadership to answer.
+1. **Pricing — OPEN:** Should AI Investigation Assistant launch included in all paid plans or gated to an AI add-on tier? Arguments for inclusion: maximizes adoption data in the critical competitive window; gating fragments analyst teams (some get AI, some don't). Arguments for gating: $287K ARR upside is meaningful; gating creates clear upgrade conversation. Recommendation pending leadership input — needs resolution before GA.
 
-2. **STT provider — RESOLVED:** Recommended provider is **Deepgram** (lowest latency on mobile networks, streaming transcription support, competitive accuracy for task-management vocabulary). Whisper API as fallback for accuracy-critical edge cases. Web Speech API for browser desktop as a free-tier complement. Engineering to confirm during technical spec week (Week 3) — this decision must not slip.
+2. **LLM provider — OPEN:** Recommended provider is TBD pending accuracy evaluation on [Your Product] telemetry query vocabulary. GPT-4o and Claude both show strong structured query performance; evaluation should weight recall accuracy on security-specific entity extraction (IPs, hashes, CVEs, process names). Engineering to complete evaluation by Week 3.
 
-3. **Chat session persistence:** V1 spec: 24-hour session persistence. Consider shortening or lengthening based on beta feedback.
+3. **Investigation Chat session length:** V1 spec: sessions persist for incident lifetime. Consider whether a separate "exploration" mode with a time-limited session (e.g., 24 hours) would serve ad-hoc queries that don't attach to a formal incident.
 
-4. **Proactive AI in Chat:** Should Chat suggest tasks based on patterns ("You usually create a retrospective task after sprints — want me to add one?"). Deferred to V2; high-value signal to watch for.
+4. **Proactive AI in Chat:** Should Investigation Chat suggest hypotheses based on patterns across the account's alert history ("Similar lateral movement pattern observed 3 weeks ago — want me to pull that timeline?"). High value signal to watch for in beta. Deferred to V2.
 
-5. **Feedback loop:** Include thumbs up/down on AI-created tasks in V1 to collect training signal for future accuracy improvements.
+5. **Feedback loop and model improvement:** Thumbs down feedback is collected in V1. Define the process for [Your Product] team to review flagged responses and the cadence for model fine-tuning based on collected signals. Needs an owner before launch.
 
 ---
 
 ## Appendix
 
 **Key Research Sources:**
-- TaskFlow Q4 2025 User Survey — Voice & AI Features
-- Customer Interview Series: Mobile and On-the-Go Task Management (n=12)
-- TaskFlow Support Ticket Analysis: Mobile Limitations
-- Competitive Analysis: Asana AI (Nov 2024), ClickUp Brain, Notion AI, Linear AI
+- [Your Product] Q4 2025 Investigation Funnel Analysis — 60% abandonment rate at root cause determination
+- SOC Analyst Survey (n=800) — context-switching root cause; top abandonment themes
+- Churn Exit Survey Analysis — 23% citing "too manual, not enough AI automation"
+- [Your Product] Q4 Pipeline Analysis — 18% of prospects citing AI in eval criteria
+- Competitive Analysis: CrowdStrike Charlotte AI (live), Microsoft Copilot for Security (live), Palo Alto Cortex Copilot (live)
+- AI-Guided Investigation View A/B Experiment — +14.4pp completion lift for mid-size teams (p < 0.001); -25 min time-to-root-cause
 
 **Pre-launch research required:**
-- Behavioral study: measure actual mobile task creation frequency and time-of-day patterns to validate the capture gap (survey data alone is insufficient)
-- Usability test: error recovery flow with simulated 85% accuracy — observe how often users catch wrong fields in a non-blocking toast during motion-context tasks
-- Concept test: AI Chat with 6–8 EMs and PMs to validate the conversational planning use case before committing Chat to V1 scope
-- Delegation scenarios: test manager workflows where voice is used to assign tasks to others, not just capture personal tasks
+- Accuracy evaluation: build a test set of 50+ investigation queries with ground-truth answers verified against telemetry; measure AI recall and precision before beta
+- Usability test: error recovery flow with simulated 90% accuracy — observe how often analysts catch incorrect citations in the Quick Query triage context
+- Concept test: Investigation Chat with 6–8 threat hunters and Tier 2 analysts to validate multi-turn conversational investigation before committing Chat to full V1 scope
+- Shift handover scenario testing: test session handover flow with pairs of analysts to validate that context transfer is legible to incoming analysts without prior session context
+
+**Personas referenced:**
+- **Maya** — SOC Analyst Tier 1, overwhelmed with 80+ alerts/day. Needs fast context to triage in <5 min per alert. Primary Quick Query user.
+- **Carlos** — Threat Hunter, proactively investigating TTPs. Needs deep multi-turn investigation sessions. Primary Investigation Chat user.
+- **Sarah Chen** — CISO, needs MTTD/MTTR improvements for board reporting. Wants ROI on security platform investment. Indirect beneficiary; primary audience for investigation summary exports and metrics dashboard.
 
 **Changelog:**
-- v0.1 — Initial draft (2026-03-11). Combined from v1 (goals), v2 (narrative), v3 (two-mode structure).
-- v0.2 — (2026-03-11) Addressed engineering, executive, and UX research feedback: added revenue projection, resolved pricing and STT provider decisions, added capacity trade-off, clarified p95 latency definition, added delegation feature, new user onboarding, Chat session storage architecture, and pre-launch research requirements.
+- v0.1 — Initial draft (2026-03-11). Combined from problem analysis, impact model, and experiment readout. Dual-mode structure validated by A/B experiment segment results.
+- v0.2 — (2026-03-11) Addressed security compliance, engineering, and executive feedback: added evidence citation requirement, session handover flow, AI data handling policy, latency SLOs, enterprise exclusion rationale, and pre-launch accuracy evaluation requirement.
 
 **FAQ:**
 
 *Q: Why dual mode instead of one unified interface?*
-A: User research shows two distinct jobs: fast capture (commute, hands-busy) and planning (sprint setup, project scoping). A single interface optimized for one fails the other. The toggle costs little in UX complexity; it serves the full use case.
+A: SOC workflows split cleanly across two jobs. Tier 1 analysts need instant answers within a 5-minute triage window — Investigation Chat is too slow and too deep for that use case. Threat hunters need 30-90 minute conversational investigation sessions — Quick Query is too shallow. A single interface optimized for one fails the other. The toggle costs little in UX complexity and serves both personas without compromise.
 
-*Q: Will voice-created tasks look different from typed tasks?*
-A: No. Tasks created via voice are structurally identical. Internally they carry a source metadata flag for analytics only — never surfaced to users.
+*Q: Will AI-generated investigations be admissible in incident records?*
+A: AI responses are supporting evidence, not conclusions. Every response cites the underlying telemetry events, which are the authoritative record. The AI is helping analysts find and interpret evidence faster — the evidence itself comes from [Your Product]'s telemetry, which is the system of record.
 
-*Q: What happens if I speak in a language other than English?*
-A: V1 is English-only. The app accepts the input but accuracy will be poor. Multi-language support is a planned V2 investment; documented in launch comms.
+*Q: What happens if the AI returns a wrong answer?*
+A: Every response includes citations to underlying data, so analysts can verify. Thumbs-down feedback flags the response for review. The AI is designed to express uncertainty rather than confabulate — if data is ambiguous or unavailable, it says so. The goal is a useful tool, not an infallible oracle.
+
+*Q: Can analysts use this for threat hunting even if no alert is active?*
+A: V1 surfaces Investigation Chat within the investigation view of an existing alert or incident. Standalone threat hunting mode — querying telemetry without an associated alert — is a high-value V2 feature. We'll learn how analysts want to use free-form investigation from beta before committing to the UX.

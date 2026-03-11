@@ -128,14 +128,15 @@ Claude will use everything in this file to tailor its questions, draft the probl
 
 ## Example (Filled In)
 
-> **Acme Tasks** is a project management SaaS for remote engineering teams.
+> **[Your Product]** is an enterprise cybersecurity platform (endpoint + cloud + identity security) for mid-size and enterprise security teams.
 >
-> **Founded:** 2022 | **Employees:** 35 | **Customers:** 400 companies | **Revenue:** $2.1M ARR, growing 12% MoM | **Funding:** Seed — $3M
+> **Founded:** 2020 | **Employees:** 120 | **Customers:** 850 enterprise accounts | **Revenue:** $4.2M ARR, targeting $6M | **Funding:** Series B — $32M
 >
 > **Personas:**
-> - **Engineering Managers** — need sprint tracking, burndown charts, and team visibility without switching out of their workflow
-> - **Product Managers** — need roadmap management and cross-team dependency tracking
+> - **SOC Analysts (Tier 1)** — need fast alert triage with inline context; processing 80+ alerts/day, <5 min per alert
+> - **Threat Hunters** — need deep multi-turn investigation sessions across endpoint, cloud, and identity telemetry
+> - **CISOs** — need MTTD/MTTR improvements for board reporting and ROI justification on platform spend
 >
-> **Q1 Goals:** (1) Reach $3M ARR, (2) Launch AI features, (3) Reduce churn from 4% to 3%
+> **Q2 Goals:** (1) Reach $6M ARR, (2) Launch AI Investigation Assistant, (3) Reduce churn driven by "too manual" complaints
 >
-> **Key metrics:** Avg deal $900/yr · CAC $600 · LTV $3,200 · Churn 4%/mo
+> **Key metrics:** Avg deal $4,900/yr · CAC $3,200 · LTV $18,000 · Churn 2.1%/mo

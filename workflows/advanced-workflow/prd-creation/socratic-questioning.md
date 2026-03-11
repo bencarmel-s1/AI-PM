@@ -181,22 +181,22 @@ This helps PMs start from user needs and work up to business strategy, not the r
 
 ## Example Question Sequence
 
-**For AI Voice Chat + To-Do List Feature:**
+**For AI Investigation Assistant Feature:**
 
-1. **Problem:** "What specific pain point does voice chat solve that typing doesn't?"
-   - Pushes for concrete problem statement
+1. **Problem:** "What specific pain point does natural language investigation solve that the current alert view doesn't?"
+   - Pushes for concrete problem statement — e.g., "Analysts pivot between 4+ tools to answer one question about an alert" is strong; "analysts want better AI" is not
 
-2. **Solution:** "Why voice over other input methods? What alternatives did you consider?"
-   - Tests solution validation
+2. **Solution:** "Why a conversational AI interface? What alternatives did you consider — auto-correlation, richer alert cards, SIEM query templates?"
+   - Tests solution validation; surfaces whether the PM has genuinely considered alternatives or anchored on the first idea
 
-3. **Success:** "How will we measure if users actually use the voice feature?"
-   - Establishes clear success criteria
+3. **Success:** "How will we measure whether analysts actually complete more investigations — and that AI is the cause, not something else?"
+   - Establishes clear, attributable success criteria; pushes beyond "feature adoption" to behavioral outcome
 
-4. **Constraints:** "What are we NOT including in V1? What comes later?"
-   - Helps scope the MVP
+4. **Constraints:** "What are we NOT including in V1? Autonomous response? External threat intel enrichment? Compliance reporting?"
+   - Helps scope the MVP; in security, scope creep toward autonomous action has compliance and liability implications worth surfacing early
 
-5. **Strategy:** "Why is this the right AI feature to build first, versus other AI opportunities?"
-   - Tests strategic thinking
+5. **Strategy:** "Why is AI investigation the right feature to build now, versus AI-assisted triage scoring, AI alert deduplication, or other AI opportunities on the roadmap?"
+   - Tests strategic thinking and competitive urgency; a good answer should reference the CrowdStrike Charlotte AI competitive threat and the 23% churn signal
 
 ---
 
