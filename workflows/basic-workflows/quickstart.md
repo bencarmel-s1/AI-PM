@@ -129,5 +129,5 @@ You just ran your first workflow. The same pattern applies to every template in 
 ## Next steps
 
 - Try **user-research-synthesis.md** after your next round of interviews
-- Set up a **CLAUDE.md** file in your working folder to give Claude context about your product (see `getting-started/claude-md-setup.md`)
+- Set up a **CLAUDE.md** file using [`workflows/company-context/company-context-sentinelone.md`](../company-context/company-context-sentinelone.md) as your starting point — SentinelOne context is pre-filled, just add your area (see [`getting-started/claude-md-setup.md`](../../getting-started/claude-md-setup.md) for instructions)
 - Read **skills/context-management.md** before your first long research session

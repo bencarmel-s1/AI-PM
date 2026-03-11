@@ -114,3 +114,14 @@ What do you know about my product and team?
 ```
 
 Claude should reflect back the context from your `CLAUDE.md`. If it doesn't, check that the file is named exactly `CLAUDE.md` and is in the folder where you ran the `claude` command.
+
+---
+
+## SentinelOne starting point
+
+Rather than writing your context file from scratch, use the pre-built SentinelOne template:
+
+- **[`workflows/company-context/company-context-sentinelone.md`](../workflows/company-context/company-context-sentinelone.md)** — SentinelOne company info already filled in; complete the `[YOUR AREA]` sections for your squad
+- **[`workflows/company-context/company-context-template.md`](../workflows/company-context/company-context-template.md)** — Blank template if you want to build from scratch
+
+Copy your chosen file into your project folder, rename it `CLAUDE.md`, and fill in the rest.

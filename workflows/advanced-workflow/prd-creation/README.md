@@ -26,6 +26,8 @@ Guide me through the process using @socratic-questioning.md.
 My initial ideas are: [2-3 sentences about the feature]
 ```
 
+Don't have a company context file yet? Start with [`workflows/company-context/company-context-sentinelone.md`](../../company-context/company-context-sentinelone.md) — the SentinelOne sections are pre-filled, just add your area's goals and team details.
+
 Claude will ask you 3–5 sharpening questions, then generate multiple strategic drafts for you to choose from.
 
 ---
@@ -68,7 +70,7 @@ These are NOT stored here — they live in `.claude/agents/` because they're pro
 Share this entire `prd-creation/` folder. They'll need to:
 1. Copy the files into their own project
 2. Have the 3 sub-agents set up in their `.claude/agents/` folder
-3. Have (or create) a `company-context.md` file for their product
+3. Have (or create) a `company-context.md` file for their product — use [`workflows/company-context/company-context-sentinelone.md`](../../company-context/company-context-sentinelone.md) as a starting point
 
 The workflow is the same regardless of product or company.
 

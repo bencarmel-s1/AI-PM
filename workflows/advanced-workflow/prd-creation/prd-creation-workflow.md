@@ -33,6 +33,8 @@ My initial ideas are: [brief description of the feature]
 
 **Why this works:** Claude has full context about your product, users, and goals — so every question and suggestion is grounded in your actual situation, not generic advice.
 
+> **Don't have a company context file yet?** Start with [`workflows/company-context/company-context-sentinelone.md`](../../company-context/company-context-sentinelone.md). The SentinelOne-wide sections are pre-filled — just complete the `[YOUR AREA]` sections for your squad.
+
 ---
 
 ### Phase 2: Socratic Sharpening (3–5 questions)
@@ -148,6 +150,8 @@ The richer your `company-context.md`, the better every PRD will be. Include:
 - Revenue model and pricing tiers
 
 Store this file in your project's `.claude/` folder as `CLAUDE.md` so Claude loads it automatically every session.
+
+For a ready-to-fill template, see [`workflows/company-context/`](../../company-context/) — it includes a blank template and a SentinelOne-specific example with company-wide context already filled in.
 
 ---
 

@@ -45,7 +45,11 @@ When documenting a workflow, include:
 
 ## Workflows in This Folder
 
-*None yet — be the first to contribute!*
+| Folder | What It Contains |
+|---|---|
+| [`basic-workflows/`](./basic-workflows/) | 6 ready-to-use templates for everyday PM tasks |
+| [`advanced-workflow/prd-creation/`](./advanced-workflow/prd-creation/) | Full 5-phase PRD creation workflow with Socratic questioning and agent reviews |
+| [`company-context/`](./company-context/) | Templates for giving Claude persistent SentinelOne context — start here before any PRD session |
 
 ---
 
