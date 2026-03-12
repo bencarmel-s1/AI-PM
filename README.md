@@ -24,9 +24,14 @@ This repository serves as a **living knowledge base** for our PM team to:
 │   │   ├── installing-claude.md    # Install on Mac/Windows, Zscaler setup, auth
 │   │   ├── claude-md-setup.md      # Set up persistent context for your product/team
 │   │   └── faq.md                  # Common setup issues and troubleshooting
-│   └── claude-desktop/         # No-terminal alternative using Claude Desktop + Cowork
-│       ├── README.md           # Desktop vs CLI: when to use which
-│       └── getting-started-cowork.md  # Install Claude Desktop and run your first task
+│   ├── claude-desktop/         # No-terminal alternative using Claude Desktop + Cowork
+│   │   ├── README.md           # Desktop vs CLI: when to use which
+│   │   └── getting-started-cowork.md  # Install Claude Desktop and run your first task
+│   └── mcp-configuration/      # Connect AI tools to external systems via MCP
+│       ├── README.md           # What is MCP and what configs are available
+│       └── jira-mcp-integration-for-windsurf/   # Connect Windsurf to Jira and Confluence
+│           ├── README.md           # Step-by-step setup guide
+│           └── jira-mcp-integration-config.md  # Config file to copy into Windsurf
 │
 ├── prompts/              # Reusable prompt templates by PM use case
 │   ├── discovery/        # User research, problem framing, hypothesis generation
@@ -67,9 +72,10 @@ This repository serves as a **living knowledge base** for our PM team to:
 2. **Complete the level-set course** — Work through [Claude Code for Product Managers](./learning/claude-code-for-pms.md) by Carl Vellotti (~10–12 hours, self-paced, free with Claude Pro). This is the shared baseline for the whole team — do this before anything else.
 3. **Get yourself familiar with the Product Management Lifecycle with the use of Claude Code** - Work through [Product Management Lifecycle](./product-management-lifecycle/) which showcases the end-to-end PM workflow.
 3. **Run your first workflow** — [`workflows/basic Workflows/quickstart.md`](./workflows/basic%20Workflows/quickstart.md) walks you through a complete end-to-end example in under 15 minutes. Start here before exploring other templates.
-4. **Set up your CLAUDE.md** — [`getting-started/claude-code/claude-md-setup.md`](./getting-started/claude-code/claude-md-setup.md) shows you how to give Claude persistent context about your product and team. Do this once and save time every session. Use [`workflows/company-context/company-context-sentinelone.md`](./workflows/company-context/company-context-sentinelone.md) as your starting point — SentinelOne context is pre-filled.
-5. **Explore the templates** — Browse [`workflows/basic Workflows/`](./workflows/basic%20Workflows/) for 6 ready-to-use PM templates.
-6. **Contribute back** — Share what worked (and what didn't).
+4. **Connect to Jira (optional)** — [`getting-started/mcp-configuration/`](./getting-started/mcp-configuration/) shows you how to connect Windsurf to Jira and Confluence via MCP, so you can query tickets and pages directly from the chat.
+5. **Set up your CLAUDE.md** — [`getting-started/claude-code/claude-md-setup.md`](./getting-started/claude-code/claude-md-setup.md) shows you how to give Claude persistent context about your product and team. Do this once and save time every session. Use [`workflows/company-context/company-context-sentinelone.md`](./workflows/company-context/company-context-sentinelone.md) as your starting point — SentinelOne context is pre-filled.
+6. **Explore the templates** — Browse [`workflows/basic Workflows/`](./workflows/basic%20Workflows/) for 6 ready-to-use PM templates.
+7. **Contribute back** — Share what worked (and what didn't).
 
 ---
 
@@ -84,6 +90,7 @@ This repository serves as a **living knowledge base** for our PM team to:
 | Set up CLAUDE.md for your product | 🟢 Done | `getting-started/claude-code/claude-md-setup.md` |
 | Run your first workflow | 🟢 Done | `workflows/Basic Workflows/quickstart.md` |
 | Use Claude without a terminal (Desktop + Cowork) | 🟢 Done | `getting-started/claude-desktop/` |
+| Connect Windsurf to Jira via MCP | 🟢 Done | `getting-started/mcp-configuration/` |
 
 **Research & Discovery**
 | Use Case | Status | Where |
