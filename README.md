@@ -18,10 +18,15 @@ This repository serves as a **living knowledge base** for our PM team to:
 ## 🗂️ Repository Structure
 
 ```
-├── getting-started/      # Everything you need to install and start using Claude Code
-│   ├── installing-claude.md    # How to install Claude Code (Mac, Windows) + why use the CLI
-│   ├── claude-md-setup.md      # How to set up persistent context for your product/team
-│   └── faq.md                  # Common setup issues and troubleshooting
+├── getting-started/      # Setup guides for both Claude tools
+│   ├── claude-code/            # Terminal-based setup (Claude Code CLI)
+│   │   ├── README.md           # Claude Code overview + when to use vs Desktop
+│   │   ├── installing-claude.md    # Install on Mac/Windows, Zscaler setup, auth
+│   │   ├── claude-md-setup.md      # Set up persistent context for your product/team
+│   │   └── faq.md                  # Common setup issues and troubleshooting
+│   └── claude-desktop/         # No-terminal alternative using Claude Desktop + Cowork
+│       ├── README.md           # Desktop vs CLI: when to use which
+│       └── getting-started-cowork.md  # Install Claude Desktop and run your first task
 │
 ├── prompts/              # Reusable prompt templates by PM use case
 │   ├── discovery/        # User research, problem framing, hypothesis generation
@@ -56,11 +61,13 @@ This repository serves as a **living knowledge base** for our PM team to:
 
 **New to Claude Code?** Follow these steps in order:
 
-1. **Install Claude Code** — [`getting-started/installing-claude.md`](./getting-started/installing-claude.md) covers Mac and Windows, including Zscaler setup, and explains why you're using the terminal instead of the website.
+> **Prefer not to use the terminal?** Skip straight to [`getting-started/claude-desktop/`](./getting-started/claude-desktop/) to set up Claude Desktop and Cowork — no terminal required.
+
+1. **Install Claude Code** — [`getting-started/claude-code/`](./getting-started/claude-code/) covers Mac and Windows installation, Zscaler setup, authentication, and why you're using the terminal instead of the website.
 2. **Complete the level-set course** — Work through [Claude Code for Product Managers](./learning/claude-code-for-pms.md) by Carl Vellotti (~10–12 hours, self-paced, free with Claude Pro). This is the shared baseline for the whole team — do this before anything else.
 3. **Get yourself familiar with the Product Management Lifecycle with the use of Claude Code** - Work through [Product Management Lifecycle](./product-management-lifecycle/) which showcases the end-to-end PM workflow.
 3. **Run your first workflow** — [`workflows/basic Workflows/quickstart.md`](./workflows/basic%20Workflows/quickstart.md) walks you through a complete end-to-end example in under 15 minutes. Start here before exploring other templates.
-4. **Set up your CLAUDE.md** — [`getting-started/claude-md-setup.md`](./getting-started/claude-md-setup.md) shows you how to give Claude persistent context about your product and team. Do this once and save time every session. Use [`workflows/company-context/company-context-sentinelone.md`](./workflows/company-context/company-context-sentinelone.md) as your starting point — SentinelOne context is pre-filled.
+4. **Set up your CLAUDE.md** — [`getting-started/claude-code/claude-md-setup.md`](./getting-started/claude-code/claude-md-setup.md) shows you how to give Claude persistent context about your product and team. Do this once and save time every session. Use [`workflows/company-context/company-context-sentinelone.md`](./workflows/company-context/company-context-sentinelone.md) as your starting point — SentinelOne context is pre-filled.
 5. **Explore the templates** — Browse [`workflows/basic Workflows/`](./workflows/basic%20Workflows/) for 6 ready-to-use PM templates.
 6. **Contribute back** — Share what worked (and what didn't).
 
@@ -73,9 +80,10 @@ This repository serves as a **living knowledge base** for our PM team to:
 **Setup & Onboarding**
 | Use Case | Status | Where |
 |---|---|---|
-| Install & configure Claude Code | 🟢 Done | `getting-started/installing-claude.md` |
-| Set up CLAUDE.md for your product | 🟢 Done | `getting-started/claude-md-setup.md` |
+| Install & configure Claude Code | 🟢 Done | `getting-started/claude-code/installing-claude.md` |
+| Set up CLAUDE.md for your product | 🟢 Done | `getting-started/claude-code/claude-md-setup.md` |
 | Run your first workflow | 🟢 Done | `workflows/Basic Workflows/quickstart.md` |
+| Use Claude without a terminal (Desktop + Cowork) | 🟢 Done | `getting-started/claude-desktop/` |
 
 **Research & Discovery**
 | Use Case | Status | Where |

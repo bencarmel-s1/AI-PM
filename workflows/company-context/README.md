@@ -93,6 +93,6 @@ A good rule of thumb: if you'd update your team's onboarding doc, update this fi
 
 ## Related files
 
-- [`getting-started/claude-md-setup.md`](../../getting-started/claude-md-setup.md) — How to set up `CLAUDE.md` for persistent context
+- [`getting-started/claude-code/claude-md-setup.md`](../../getting-started/claude-code/claude-md-setup.md) — How to set up `CLAUDE.md` for persistent context
 - [`workflows/advanced-workflow/prd-creation/`](../advanced-workflow/prd-creation/) — Full PRD creation workflow that uses this context file
 - [`skills/context-management.md`](../../skills/context-management.md) — How Claude's context window works and how to manage long sessions

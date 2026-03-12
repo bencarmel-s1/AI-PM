@@ -79,6 +79,6 @@ This gives you a checkpoint you can `@reference` in future sessions even if cont
 
 ## Cross-session memory: CLAUDE.md
 
-Claude doesn't remember anything between sessions by default. But you can give it persistent context by creating a `CLAUDE.md` file in your working folder. See [`getting-started/claude-md-setup.md`](../getting-started/claude-md-setup.md) for how to set this up.
+Claude doesn't remember anything between sessions by default. But you can give it persistent context by creating a `CLAUDE.md` file in your working folder. See [`getting-started/claude-code/claude-md-setup.md`](../getting-started/claude-code/claude-md-setup.md) for how to set this up.
 
 For SentinelOne PMs, [`workflows/company-context/company-context-sentinelone.md`](../workflows/company-context/company-context-sentinelone.md) is a ready-to-fill starting point — company-wide context is already there, just add your area's priorities and team details.
