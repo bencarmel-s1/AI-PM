@@ -41,9 +41,10 @@ This repository serves as a **living knowledge base** for our PM team to:
 │
 ├── workflows/            # Step-by-step Claude Code workflows for common PM tasks
 │   ├── basic-workflows/  # 6 ready-to-use templates + quickstart guide
-│   ├── advanced-workflow/prd-creation/      # Full PRD creation workflow with agent reviews
-│   ├── advanced-workflow/data-analysis/     # Funnel analysis, ROI modeling, A/B test readouts
-│   ├── advanced-workflow/product-strategy/  # 3-phase strategy workflow with Rumelt's Kernel
+│   ├── advanced-workflow/          # Multi-step workflows for complex PM tasks
+│   │   ├── prd-creation/           # Full PRD creation workflow with agent reviews
+│   │   ├── data-analysis/          # Funnel analysis, ROI modeling, A/B test readouts
+│   │   └── product-strategy/       # 3-phase strategy workflow with Rumelt's Kernel
 │   └── company-context/  # SentinelOne context templates for Claude sessions
 │
 ├── case-studies/         # Real examples of Claude Code used in our PM work
