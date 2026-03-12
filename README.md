@@ -79,50 +79,6 @@ This repository serves as a **living knowledge base** for our PM team to:
 
 ---
 
-## 💡 PM Use Cases We're Exploring
-
-> **Legend:** 🟢 Done · 🟡 In Progress · 🔵 Planned
-
-**Setup & Onboarding**
-| Use Case | Status | Where |
-|---|---|---|
-| Install & configure Claude Code | 🟢 Done | `getting-started/claude-code/installing-claude.md` |
-| Set up CLAUDE.md for your product | 🟢 Done | `getting-started/claude-code/claude-md-setup.md` |
-| Run your first workflow | 🟢 Done | `workflows/Basic Workflows/quickstart.md` |
-| Use Claude without a terminal (Desktop + Cowork) | 🟢 Done | `getting-started/claude-desktop/` |
-| Connect Windsurf to Jira via MCP | 🟢 Done | `getting-started/mcp-configuration/` |
-
-**Research & Discovery**
-| Use Case | Status | Where |
-|---|---|---|
-| User interview synthesis | 🟢 Done | `workflows/Basic Workflows/` |
-| Competitive research synthesis | 🟢 Done | `workflows/Basic Workflows/` |
-| Synthesize research with a specialist agent | 🟢 Done | `skills/reviewer-guides/user-researcher.md` |
-
-**Planning & Execution**
-| Use Case | Status | Where |
-|---|---|---|
-| User story & ticket generation | 🟢 Done | `workflows/Basic Workflows/` |
-| Writing & refining PRDs | 🟡 In Progress | `prompts/execution/` |
-| Spec review for technical gaps | 🟢 Done | `skills/reviewer-guides/engineer.md` |
-| Roadmap scenario planning | 🔵 Planned | `prompts/strategy/` |
-
-**Communication & Reporting**
-| Use Case | Status | Where |
-|---|---|---|
-| Meeting notes → action items | 🟢 Done | `workflows/Basic Workflows/` |
-| Weekly status updates | 🟢 Done | `workflows/Basic Workflows/` |
-| Sprint retrospectives | 🟢 Done | `workflows/Basic Workflows/` |
-| Leadership-ready updates and briefs | 🟢 Done | `skills/reviewer-guides/executive.md` |
-
-**Strategy & Analytics**
-| Use Case | Status | Where |
-|---|---|---|
-| Product strategy development | 🟢 Done | `workflows/advanced-workflow/product-strategy/` |
-| OKR & metric definition | 🔵 Planned | `prompts/analytics/` |
-
----
-
 ## 🤝 How to Contribute
 
 We grow this repo together. Here's how you can add value:
