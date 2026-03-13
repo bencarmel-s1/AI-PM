@@ -15,6 +15,15 @@ This repository serves as a **living knowledge base** for our PM team to:
 
 ---
 
+## 🆕 What's New
+
+> See the full [CHANGELOG](./CHANGELOG.md) for a complete history of additions and changes, including what each item does and when to use it.
+
+**2026-03-13 — Initial Release**
+The repo launched with a full set of onboarding guides, 7 basic workflow templates, 4 advanced multi-step workflows (PRD creation, data analysis, feature request discovery, launch pack generation), the end-to-end PM lifecycle framework, specialist agent templates, and the SentinelOne company context file.
+
+---
+
 ## 🗂️ Repository Structure
 
 ```
