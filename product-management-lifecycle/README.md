@@ -25,7 +25,8 @@ The goal: make the PM process from raw discovery to delivered feature faster, mo
 | 5. Prototyping | Build interactive mockups to validate ideas before engineering | Generate prototype scaffolding, review designs, suggest interactions | 🟡 In Progress |
 | 6. Jira | Push specs into tickets for the engineering team | Generate epics, stories, acceptance criteria, push to Jira | 🔵 Planned |
 | 7. Delivery Tracking | Monitor progress, surface blockers, keep stakeholders updated | Summarize sprint updates, draft comms | 🟢 Supported |
-| 8. Retrospective | Capture what worked, what didn't, what to carry forward | Synthesize retro notes into structured action items | 🟢 Supported |
+| 8. Launch | Get the right artifact to every audience — sales, CS, exec, customers | Generate full launch pack: release notes, sales brief, CS brief, exec announcement, customer announcement, Slack post | 🟢 Supported |
+| 9. Retrospective | Capture what worked, what didn't, what to carry forward | Synthesize retro notes into structured action items | 🟢 Supported |
 
 > **Legend:** 🟢 Supported by existing workflows/prompts · 🟡 In Progress · 🔵 Planned
 
@@ -40,9 +41,10 @@ The goal: make the PM process from raw discovery to delivered feature faster, mo
 **Claude's role:** Synthesize. Theme. Surface patterns you'd miss by reading linearly.
 
 **Tools available today:**
+- [`workflows/advanced-workflow/feature-request-discovery/`](../workflows/advanced-workflow/feature-request-discovery/) — query Jira live, theme and quantify feature requests, score against OKRs, surface revenue signal and competitive gaps — full discovery brief in one session
 - [`skills/reviewer-guides/user-researcher.md`](../skills/reviewer-guides/user-researcher.md) — synthesize interviews, tickets, and qualitative feedback
-- [`workflows/basic Workflows/user-research-synthesis.md`](../workflows/basic%20Workflows/user-research-synthesis.md) — step-by-step workflow
-- [`workflows/basic Workflows/competitive-analysis.md`](../workflows/basic%20Workflows/competitive-analysis.md) — competitive research synthesis
+- [`workflows/basic-workflows/user-research-synthesis.md`](../workflows/basic-workflows/user-research-synthesis.md) — step-by-step workflow
+- [`workflows/basic-workflows/competitive-analysis.md`](../workflows/basic-workflows/competitive-analysis.md) — competitive research synthesis
 - [`prompts/discovery/`](../prompts/discovery/) — targeted discovery prompts *(coming soon)*
 
 ---
@@ -127,7 +129,29 @@ The goal: make the PM process from raw discovery to delivered feature faster, mo
 
 ---
 
-### Stage 8 — Retrospective
+### Stage 8 — Launch
+
+**What you're doing:** Getting the right information to every team that needs it — before they have to ask. Sales needs to know how to pitch it. CS needs to know what customers will ask. Leadership needs the business case. Customers need to know what changed and why it matters. This stage produces all of it, fast.
+
+**Claude's role:** Generate a full launch pack — all six audience artifacts — from a single session using your PRD and sprint notes as inputs.
+
+**Tools available today:**
+- [`workflows/advanced-workflow/launch/README.md`](../workflows/advanced-workflow/launch/README.md) — overview and quick start
+- [`workflows/advanced-workflow/launch/launch-workflow.md`](../workflows/advanced-workflow/launch/launch-workflow.md) — 5-phase step-by-step process
+- [`workflows/advanced-workflow/launch/launch-pack-template.md`](../workflows/advanced-workflow/launch/launch-pack-template.md) — blank template for generating all artifacts with Claude
+- [`workflows/advanced-workflow/launch/example-launch-pack.md`](../workflows/advanced-workflow/launch/example-launch-pack.md) — fully worked Purple AI example (all 6 artifacts filled in)
+- [`skills/reviewer-guides/executive.md`](../skills/reviewer-guides/executive.md) — review gate for the executive announcement
+
+**Quick start:**
+```
+Generate a full launch pack using @launch-pack-template.md.
+Inputs: @[your-prd-final.md] @[sprint-notes.md]
+Context: @company-context-sentinelone.md
+```
+
+---
+
+### Stage 9 — Retrospective
 
 **What you're doing:** Closing the loop. What shipped, what didn't, what you'd do differently, and what the team learned.
 
@@ -145,11 +169,12 @@ This lifecycle is a frame — a way to see how all the other content in the repo
 
 | If you're at this stage... | Start here |
 |---|---|
-| Discovery | `skills/reviewer-guides/user-researcher.md` · `workflows/basic Workflows/` |
+| Discovery | `workflows/advanced-workflow/feature-request-discovery/` · `skills/reviewer-guides/user-researcher.md` · `workflows/basic-workflows/` |
 | PRD writing | `prompts/execution/` · `skills/reviewer-guides/engineer.md` |
 | Prototyping | `Prototyping/` · Figma MCP integration · `skills/reviewer-guides/engineer.md` |
 | Jira / ticket creation | `prompts/execution/` · *(lifecycle workflows, coming soon)* |
 | Stakeholder communication | `skills/reviewer-guides/executive.md` · `workflows/basic Workflows/weekly-status-update.md` |
+| Launch | `workflows/advanced-workflow/launch/launch-workflow.md` · `workflows/advanced-workflow/launch/launch-pack-template.md` · `workflows/advanced-workflow/launch/example-launch-pack.md` |
 | Retrospectives | `workflows/basic Workflows/sprint-retrospective.md` |
 
 ---
@@ -187,6 +212,9 @@ product-management-lifecycle/
 │   └── epic-structure-prompt.md     # Prompt for structuring epics and hierarchies
 └── delivery/
     └── sprint-review-workflow.md    # How to run a delivery review with Claude
+
+# Launch workflows live in:
+# workflows/advanced-workflow/launch/
 ```
 
 ---
