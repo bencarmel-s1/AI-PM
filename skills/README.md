@@ -28,7 +28,14 @@ This folder is for explaining *what Claude Code can do* and *how to use it effec
 
 ## Guides in This Folder
 
-*None yet — be the first to contribute!*
+| Guide | What it covers |
+|---|---|
+| `context-management.md` | How Claude's memory works within and across sessions |
+| `reviewer-guides/` | Specialized agent templates for user research, executive comms, and engineering review |
+| `scheduled-tasks/` | Automation templates for recurring PM workflows (e.g., weekly pipeline digest) |
+| `customer-research/` | Synthesizing customer feedback and improving interview questionnaires |
+| `strategic-planning/` | Validating product decisions and structuring backlog prioritization |
+| `productivity/` | Prioritizing your to-do list by strategic leverage |
 
 ---
 
