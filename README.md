@@ -19,6 +19,9 @@ This repository serves as a **living knowledge base** for our PM team to:
 
 > See the full [CHANGELOG](./CHANGELOG.md) for a complete history of additions and changes, including what each item does and when to use it.
 
+**2026-03-17 — New Skills: Customer Research, Strategic Planning, Productivity**
+Added 5 new skill guides across 3 new categories in `skills/`: customer feedback synthesis, customer call questionnaire improvement, strategic decision validation, backlog prioritization, and to-do prioritization.
+
 **2026-03-13 — Initial Release**
 The repo launched with a full set of onboarding guides, 7 basic workflow templates, 4 advanced multi-step workflows (PRD creation, data analysis, feature request discovery, launch pack generation), the end-to-end PM lifecycle framework, specialist agent templates, and the SentinelOne company context file.
 
@@ -60,10 +63,18 @@ The repo launched with a full set of onboarding guides, 7 basic workflow templat
 │
 ├── skills/               # Guides on Claude Code capabilities relevant to PMs
 │   ├── context-management.md   # How context windows work and how to manage long sessions
-│   └── agents/           # Pullable agent templates for specialized PM tasks
-│       ├── user-researcher.md  # Synthesize interviews, tickets, and qualitative feedback
-│       ├── executive.md        # Reframe updates and decisions for leadership
-│       └── engineer.md         # Review specs for technical gaps and feasibility
+│   ├── reviewer-guides/  # Pullable agent templates for specialized PM tasks
+│   │   ├── user-researcher.md  # Synthesize interviews, tickets, and qualitative feedback
+│   │   ├── executive.md        # Reframe updates and decisions for leadership
+│   │   └── engineer.md         # Review specs for technical gaps and feasibility
+│   ├── customer-research/      # Skills for synthesizing feedback and improving discovery
+│   │   ├── customer-feedback-synthesis.md   # Turn raw notes into themes and decision signals
+│   │   └── customer-call-questionnaire.md   # Audit and improve your interview questions
+│   ├── strategic-planning/     # Skills for decisions and backlog work
+│   │   ├── strategic-decision-validation.md # Pressure-test a direction before committing
+│   │   └── backlog-prioritization.md        # Normalize, align, and frame your backlog
+│   └── productivity/           # Skills for managing your own focus
+│       └── todo-prioritization.md           # Prioritize your to-do list by strategic leverage
 │
 ├── learning/             # Shared courses, certifications, and learning resources
 │
