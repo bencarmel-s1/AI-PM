@@ -27,6 +27,48 @@ The repo launched with a full set of onboarding guides, 7 basic workflow templat
 
 ---
 
+## ⚡ Claude Code Infrastructure
+
+This repo ships with a pre-configured `.claude/` folder — agents, commands, and skills are ready to use the moment you open this project in Claude Code. No manual setup or file copying required.
+
+### Slash Commands
+
+Type `/command-name` in Claude Code to run a full multi-step workflow:
+
+| Command | What it does |
+|---------|--------------|
+| `/prd-creation` | Full PRD workflow: Socratic sharpening → 3 strategic versions → agent reviews → final doc |
+| `/feature-request-discovery` | Pull and analyze Jira feature requests by product line, OKR alignment, and revenue signal |
+| `/data-analysis` | Funnel/problem analysis, ROI impact estimation, or A/B test readout |
+| `/launch-pack` | Generate all launch artifacts: release notes, sales brief, CS brief, exec announcement |
+| `/product-strategy` | 3-phase strategy: competitive research → 5 strategic choices → Rumelt Kernel doc + exec slides |
+
+### Agents
+
+Pre-installed specialist agents (invoke with `use agent:X` or reference in any prompt):
+
+| Agent | When to invoke |
+|-------|----------------|
+| `engineer` | Before handing off any spec to engineering — finds technical gaps, risks, missing edge cases |
+| `executive` | Before leadership syncs, writing a business case, or reframing a setback |
+| `user-researcher` | After a research sprint — synthesizes qualitative data into themes and opportunities |
+
+### Skills
+
+Single-purpose knowledge frameworks (invoke when you have content to process):
+
+| Skill | Invoke when... |
+|-------|----------------|
+| `customer-feedback-synthesis` | You have 3+ feedback sources to turn into themes and opportunities |
+| `customer-call-questionnaire` | You have an interview guide draft to stress-test before running calls |
+| `strategic-decision-validation` | You have a proposed direction to pressure-test before committing |
+| `backlog-prioritization` | You have backlog items to normalize, align, and frame for prioritization |
+| `todo-prioritization` | You have a task list and need to decide what to work on next |
+
+> **Note:** The `skills/` folder contains human-readable guides for learning and onboarding. The `.claude/skills/` folder contains the runnable Claude Code versions of those same skills.
+
+---
+
 ## 🗂️ Repository Structure
 
 ```
@@ -94,8 +136,8 @@ The repo launched with a full set of onboarding guides, 7 basic workflow templat
 3. **Get yourself familiar with the Product Management Lifecycle with the use of Claude Code** - Work through [Product Management Lifecycle](./product-management-lifecycle/) which showcases the end-to-end PM workflow.
 3. **Run your first workflow** — [`workflows/basic Workflows/quickstart.md`](./workflows/basic%20Workflows/quickstart.md) walks you through a complete end-to-end example in under 15 minutes. Start here before exploring other templates.
 4. **Connect to Jira (optional)** — [`getting-started/mcp-configuration/`](./getting-started/mcp-configuration/) shows you how to connect Windsurf to Jira and Confluence via MCP, so you can query tickets and pages directly from the chat.
-5. **Set up your CLAUDE.md** — [`getting-started/claude-code/claude-md-setup.md`](./getting-started/claude-code/claude-md-setup.md) shows you how to give Claude persistent context about your product and team. Do this once and save time every session. Use [`workflows/company-context/company-context-sentinelone.md`](./workflows/company-context/company-context-sentinelone.md) as your starting point — SentinelOne context is pre-filled.
-6. **Explore the templates** — Browse [`workflows/basic Workflows/`](./workflows/basic%20Workflows/) for 6 ready-to-use PM templates.
+5. **Personalize your CLAUDE.md** — A `CLAUDE.md` is already included at the repo root with shared SentinelOne context and a full index of available agents, commands, and skills. Open [`workflows/company-context/company-context-sentinelone.md`](./workflows/company-context/company-context-sentinelone.md) and fill in your product area and team details — then you're fully set up. See [`getting-started/claude-code/claude-md-setup.md`](./getting-started/claude-code/claude-md-setup.md) for more guidance.
+6. **Explore the templates** — Browse [`workflows/basic Workflows/`](./workflows/basic%20Workflows/) for 6 ready-to-use PM templates, or jump straight into an advanced workflow with `/prd-creation`, `/data-analysis`, or `/product-strategy`.
 7. **Contribute back** — Share what worked (and what didn't).
 
 ---
