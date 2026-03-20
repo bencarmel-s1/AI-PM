@@ -27,7 +27,9 @@ Use these when you're making decisions about *what* to build and *why* — trans
 
 ## Prompts in This Folder
 
-*None yet — be the first to contribute!*
+| Prompt | What it does |
+|---|---|
+| [`competitive-positioning.md`](./competitive-positioning.md) | Generate a competitive positioning statement from market context |
 
 ---
 

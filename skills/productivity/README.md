@@ -9,6 +9,7 @@ For the work of managing your own focus — when the to-do list is long but not 
 | Skill | What it helps you do |
 |---|---|
 | `todo-prioritization.md` | Cut through a busy to-do list to identify what deserves your attention today vs. later |
+| `multi-agent-patterns.md` | Run all 3 agents in parallel on a spec — when to use subagents vs agent teams |
 
 ---
 

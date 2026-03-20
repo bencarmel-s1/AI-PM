@@ -19,6 +19,9 @@ This repository serves as a **living knowledge base** for our PM team to:
 
 > See the full [CHANGELOG](./CHANGELOG.md) for a complete history of additions and changes, including what each item does and when to use it.
 
+**2026-03-20 — Trend Scout Update: 6 New Additions**
+Added multi-agent review workflow and skill, plugin packaging guide, hooks & automation guide, stakeholder communication skill, 5 new prompt templates (seeding all 4 prompt categories + research study analysis), and the first AI PM Trend Scout report. See the [full CHANGELOG](./CHANGELOG.md) for details.
+
 **2026-03-17 — New Skills: Customer Research, Strategic Planning, Productivity**
 Added 5 new skill guides across 3 new categories in `skills/`: customer feedback synthesis, customer call questionnaire improvement, strategic decision validation, backlog prioritization, and to-do prioritization.
 
@@ -64,6 +67,8 @@ Single-purpose knowledge frameworks (invoke when you have content to process):
 | `strategic-decision-validation` | You have a proposed direction to pressure-test before committing |
 | `backlog-prioritization` | You have backlog items to normalize, align, and frame for prioritization |
 | `todo-prioritization` | You have a task list and need to decide what to work on next |
+| `multi-agent-review` | You have a spec or PRD ready for parallel review from 3 specialist perspectives |
+| `stakeholder-communication` | You need to draft (not just review) an executive update, bad-news message, or cross-functional announcement |
 
 > **Note:** The `skills/` folder contains human-readable guides for learning and onboarding. The `.claude/skills/` folder contains the runnable Claude Code versions of those same skills.
 
@@ -98,7 +103,8 @@ Single-purpose knowledge frameworks (invoke when you have content to process):
 │   ├── advanced-workflow/          # Multi-step workflows for complex PM tasks
 │   │   ├── prd-creation/           # Full PRD creation workflow with agent reviews
 │   │   ├── data-analysis/          # Funnel analysis, ROI modeling, A/B test readouts
-│   │   └── product-strategy/       # 3-phase strategy workflow with Rumelt's Kernel
+│   │   ├── product-strategy/       # 3-phase strategy workflow with Rumelt's Kernel
+│   │   └── multi-agent-review/     # Parallel 3-agent spec review with unified synthesis
 │   └── company-context/  # SentinelOne context templates for Claude sessions
 │
 ├── case-studies/         # Real examples of Claude Code used in our PM work
@@ -115,8 +121,11 @@ Single-purpose knowledge frameworks (invoke when you have content to process):
 │   ├── strategic-planning/     # Skills for decisions and backlog work
 │   │   ├── strategic-decision-validation.md # Pressure-test a direction before committing
 │   │   └── backlog-prioritization.md        # Normalize, align, and frame your backlog
-│   └── productivity/           # Skills for managing your own focus
-│       └── todo-prioritization.md           # Prioritize your to-do list by strategic leverage
+│   ├── productivity/           # Skills for managing your own focus
+│   │   ├── todo-prioritization.md           # Prioritize your to-do list by strategic leverage
+│   │   └── multi-agent-patterns.md          # When to use subagents vs agent teams
+│   └── communication/          # Skills for drafting stakeholder communications
+│       └── stakeholder-communication.md     # Draft exec updates, bad-news framing, announcements
 │
 ├── learning/             # Shared courses, certifications, and learning resources
 │
@@ -134,10 +143,10 @@ Single-purpose knowledge frameworks (invoke when you have content to process):
 1. **Install Claude Code** — [`getting-started/claude-code/`](./getting-started/claude-code/) covers Mac and Windows installation, Zscaler setup, authentication, and why you're using the terminal instead of the website.
 2. **Complete the level-set course** — Work through [Claude Code for Product Managers](./learning/claude-code-for-pms.md) by Carl Vellotti (~10–12 hours, self-paced, free with Claude Pro). This is the shared baseline for the whole team — do this before anything else.
 3. **Get yourself familiar with the Product Management Lifecycle with the use of Claude Code** - Work through [Product Management Lifecycle](./product-management-lifecycle/) which showcases the end-to-end PM workflow.
-3. **Run your first workflow** — [`workflows/basic Workflows/quickstart.md`](./workflows/basic%20Workflows/quickstart.md) walks you through a complete end-to-end example in under 15 minutes. Start here before exploring other templates.
+3. **Run your first workflow** — [`workflows/basic-workflows/quickstart.md`](./workflows/basic-workflows/quickstart.md) walks you through a complete end-to-end example in under 15 minutes. Start here before exploring other templates.
 4. **Connect to Jira (optional)** — [`getting-started/mcp-configuration/`](./getting-started/mcp-configuration/) shows you how to connect Windsurf to Jira and Confluence via MCP, so you can query tickets and pages directly from the chat.
 5. **Personalize your CLAUDE.md** — A `CLAUDE.md` is already included at the repo root with shared SentinelOne context and a full index of available agents, commands, and skills. Open [`workflows/company-context/company-context-sentinelone.md`](./workflows/company-context/company-context-sentinelone.md) and fill in your product area and team details — then you're fully set up. See [`getting-started/claude-code/claude-md-setup.md`](./getting-started/claude-code/claude-md-setup.md) for more guidance.
-6. **Explore the templates** — Browse [`workflows/basic Workflows/`](./workflows/basic%20Workflows/) for 6 ready-to-use PM templates, or jump straight into an advanced workflow with `/prd-creation`, `/data-analysis`, or `/product-strategy`.
+6. **Explore the templates** — Browse [`workflows/basic-workflows/`](./workflows/basic-workflows/) for 6 ready-to-use PM templates, or jump straight into an advanced workflow with `/prd-creation`, `/data-analysis`, or `/product-strategy`.
 7. **Contribute back** — Share what worked (and what didn't).
 
 ---

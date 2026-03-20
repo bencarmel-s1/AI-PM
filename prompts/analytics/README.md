@@ -27,7 +27,9 @@ Use these when you need to make sense of data, define success, or communicate pe
 
 ## Prompts in This Folder
 
-*None yet — be the first to contribute!*
+| Prompt | What it does |
+|---|---|
+| [`okr-writing.md`](./okr-writing.md) | Write or refine OKRs from strategic goals and product context |
 
 ---
 

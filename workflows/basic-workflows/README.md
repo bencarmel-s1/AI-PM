@@ -49,6 +49,12 @@ Draft a PRD using @PRD-Template/Figma-PRD-Template.md based on @user-research-sy
 |---|---|
 | `sprint-retrospective.md` | What went well, what didn't, action items |
 
+### Infrastructure & Automation
+| Template | What it does |
+|---|---|
+| `plugin-packaging.md` | Package skills, agents, and commands as a Claude Code plugin |
+| `hooks-for-pms.md` | PM-specific hook recipes for automating reviews and quality gates |
+
 ---
 
 ## Common Workflows

@@ -35,7 +35,8 @@ This folder is for explaining *what Claude Code can do* and *how to use it effec
 | `scheduled-tasks/` | Automation templates for recurring PM workflows (e.g., weekly pipeline digest) |
 | `customer-research/` | Synthesizing customer feedback and improving interview questionnaires |
 | `strategic-planning/` | Validating product decisions and structuring backlog prioritization |
-| `productivity/` | Prioritizing your to-do list by strategic leverage |
+| `productivity/` | Prioritizing your to-do list and multi-agent review patterns |
+| `communication/` | Drafting stakeholder communications — exec updates, bad-news framing, announcements |
 
 ---
 

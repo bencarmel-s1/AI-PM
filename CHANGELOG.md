@@ -6,6 +6,98 @@
 
 ---
 
+## 2026-03-20 — Stakeholder Communication Skill
+
+**What's new:** Added a skill for drafting stakeholder communications — exec updates, bad-news framing, cross-functional announcements, and board prep. Pairs with the executive agent for a complete draft → review workflow.
+
+### Added
+
+- **[Stakeholder Communication Skill](./skills/communication/stakeholder-communication.md)** — Draft leadership-facing communications with structured frameworks for different scenarios. Use when you need to write (not just review) exec updates, deliver difficult news, or prepare board materials. Pair with the `executive` agent for review.
+
+---
+
+## 2026-03-20 — Hooks & Automation Guide
+
+**What's new:** Added a guide with 4 PM-specific hook recipes for automating spec reviews, enforcing template compliance, and building quality gates into your Claude Code workflows.
+
+### Added
+
+- **[Hooks for PMs](./workflows/basic-workflows/hooks-for-pms.md)** — Guide to Claude Code hooks with PM-specific recipes: auto-run agent reviews on spec edits, enforce PRD template sections, auto-format markdown, and validate required content before completion. Use when you want to automate quality checks in your PM workflows.
+
+---
+
+## 2026-03-20 — Research Study Analysis Prompt
+
+**What's new:** Added a discovery prompt for analyzing published research studies (like Anthropic's 81K-person AI usage study) and extracting product implications, user segments, and opportunity areas.
+
+### Added
+
+- **[Research Study Analysis](./prompts/discovery/research-study-analysis.md)** — Turn published research findings into product insights and opportunity areas. Use when a major study drops and you want to connect it to your product strategy.
+
+---
+
+## 2026-03-20 — Prompt Library: First 4 Prompts
+
+**What's new:** Seeded all 4 prompt categories with exemplar prompts. Each includes purpose, when to use, the prompt itself, and a usage example — setting the standard for future contributions.
+
+### Added
+
+- **[Interview Synthesis](./prompts/discovery/interview-synthesis.md)** — Synthesize raw interview notes into structured themes, pain points, and opportunities. Use after customer calls or research sprints.
+- **[PRD Draft](./prompts/execution/prd-draft.md)** — Draft a PRD section from a brief or research input. Use for lightweight PRD drafting without the full advanced workflow.
+- **[OKR Writing](./prompts/analytics/okr-writing.md)** — Write or refine OKRs from strategic context. Use during quarterly planning or goal-setting.
+- **[Competitive Positioning](./prompts/strategy/competitive-positioning.md)** — Generate a competitive positioning statement. Use when preparing for strategy reviews or market analysis.
+
+---
+
+## 2026-03-20 — Plugin Packaging Guide
+
+**What's new:** Added a guide for packaging Claude Code skills, agents, and commands as a distributable plugin. Covers the plugin manifest format, conversion steps, and distribution options.
+
+### Added
+
+- **[Plugin Packaging Guide](./workflows/basic-workflows/plugin-packaging.md)** — Step-by-step guide for turning a collection of skills, agents, and commands into a Claude Code plugin. Use when you want to share your PM toolkit beyond a git clone — covers manifest structure, local testing, and marketplace publishing.
+
+---
+
+## 2026-03-20 — Multi-Agent Review, Trend Report & Repo Health Fixes
+
+**What's new:** Added a multi-agent review system that runs the engineer, executive, and user-researcher agents in parallel on any spec or PRD, then synthesizes their feedback into a unified review. Also added the first AI PM Trend Scout report and fixed repo health issues (missing CHANGELOG entry, broken README links).
+
+### Added
+
+**Multi-Agent Review**
+- **[Multi-Agent Review Workflow](./workflows/advanced-workflow/multi-agent-review/)** — Runs all 3 specialist agents in parallel on a spec, then synthesizes their feedback into a unified, priority-ordered review document. Use before any major spec handoff or leadership review.
+- **[Multi-Agent Review Skill](./skills/productivity/multi-agent-patterns.md)** — Human-readable guide on when to use subagents vs agent teams, how to compose the repo's 3 agents for comprehensive reviews, and PM-specific multi-agent patterns (parallel competitive research, draft → review pipelines).
+
+**Trend Report**
+- **[AI PM Trend Scout Report — 2026-03-20](./trend-report-2026-03-20.md)** — First trend report covering Claude Code platform capabilities (agent teams, plugins, hooks), Anthropic ecosystem signals, and repo gap analysis with prioritized improvement proposals.
+
+### Fixed
+
+- Added missing CHANGELOG entry for the March 17 skills release (see below)
+- Fixed broken `workflows/basic Workflows/` links in README Getting Started section (now correctly points to `workflows/basic-workflows/`)
+
+---
+
+## 2026-03-17 — New Skills: Customer Research, Strategic Planning, Productivity
+
+**What's new:** Added 5 skill guides across 3 new categories, each with a runnable Claude Code version in `.claude/skills/` and a human-readable guide in `skills/`. These cover customer feedback synthesis, interview questionnaire improvement, strategic decision validation, backlog prioritization, and to-do prioritization.
+
+### Added
+
+**Customer Research**
+- **[Customer Feedback Synthesis](./skills/customer-research/customer-feedback-synthesis.md)** — Turn raw feedback from calls, tickets, and surveys into structured themes, pain points, and product opportunities. Use after any research sprint or before a planning session.
+- **[Customer Call Questionnaire](./skills/customer-research/customer-call-questionnaire.md)** — Audit and stress-test your interview guide before running customer calls. Use when preparing for a research sprint.
+
+**Strategic Planning**
+- **[Strategic Decision Validation](./skills/strategic-planning/strategic-decision-validation.md)** — Pressure-test a proposed direction against your strategy before committing. Use before leadership reviews or major roadmap decisions.
+- **[Backlog Prioritization](./skills/strategic-planning/backlog-prioritization.md)** — Normalize, align, and frame backlog items for prioritization conversations. Use before sprint planning or quarterly reviews.
+
+**Productivity**
+- **[To-Do Prioritization](./skills/productivity/todo-prioritization.md)** — Prioritize your personal task list by strategic leverage. Use at the start of your week when deciding what to work on.
+
+---
+
 ## 2026-03-13 — Initial Release
 
 **What's new:** The AI-PM repo launched with a complete foundation: onboarding guides for all skill levels, 7 ready-to-use basic workflow templates, 4 advanced multi-step workflows, a product strategy module with 3 frameworks, the end-to-end PM lifecycle framework, specialist reviewer agents, and a Salesforce automation. Everything below is available now.

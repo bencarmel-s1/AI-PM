@@ -51,6 +51,8 @@ Skills are single-purpose knowledge frameworks. Invoke when you have relevant co
 | `strategic-decision-validation` | You have a proposed direction and want structured pressure-testing before committing |
 | `backlog-prioritization` | You have a list of backlog items and need to align and frame them for prioritization |
 | `todo-prioritization` | You have a task list and need to decide what to work on next by strategic leverage |
+| `multi-agent-review` | You have a spec or PRD ready for parallel review from engineer, executive, and user-researcher perspectives |
+| `stakeholder-communication` | You need to draft an executive update, bad-news message, cross-functional announcement, or board prep |
 
 ---
 

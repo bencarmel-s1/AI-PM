@@ -27,7 +27,10 @@ Use these when you're in the early stages of understanding a problem space — b
 
 ## Prompts in This Folder
 
-*None yet — be the first to contribute!*
+| Prompt | What it does |
+|---|---|
+| [`interview-synthesis.md`](./interview-synthesis.md) | Synthesize raw interview notes into themes, pain points, and opportunities |
+| [`research-study-analysis.md`](./research-study-analysis.md) | Analyze published research studies and extract product implications |
 
 ---
 

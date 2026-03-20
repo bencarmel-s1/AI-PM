@@ -27,7 +27,9 @@ Use these when you're translating a strategy or decision into something the team
 
 ## Prompts in This Folder
 
-*None yet — be the first to contribute!*
+| Prompt | What it does |
+|---|---|
+| [`prd-draft.md`](./prd-draft.md) | Draft a PRD section from a feature brief or research synthesis |
 
 ---
 
