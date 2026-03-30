@@ -19,8 +19,8 @@ This repository serves as a **living knowledge base** for our PM team to:
 
 > See the full [CHANGELOG](./CHANGELOG.md) for a complete history of additions and changes, including what each item does and when to use it.
 
-**2026-03-20 — Trend Scout Update: 6 New Additions**
-Added multi-agent review workflow and skill, plugin packaging guide, hooks & automation guide, stakeholder communication skill, 5 new prompt templates (seeding all 4 prompt categories + research study analysis), and the first AI PM Trend Scout report. See the [full CHANGELOG](./CHANGELOG.md) for details.
+**2026-03-20 — 6 New Additions**
+Added multi-agent review workflow and skill, plugin packaging guide, hooks & automation guide, stakeholder communication skill, and 5 new prompt templates (seeding all 4 prompt categories + research study analysis). See the [full CHANGELOG](./CHANGELOG.md) for details.
 
 **2026-03-17 — New Skills: Customer Research, Strategic Planning, Productivity**
 Added 5 new skill guides across 3 new categories in `skills/`: customer feedback synthesis, customer call questionnaire improvement, strategic decision validation, backlog prioritization, and to-do prioritization.

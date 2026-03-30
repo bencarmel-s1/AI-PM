@@ -59,18 +59,15 @@
 
 ---
 
-## 2026-03-20 — Multi-Agent Review, Trend Report & Repo Health Fixes
+## 2026-03-20 — Multi-Agent Review & Repo Health Fixes
 
-**What's new:** Added a multi-agent review system that runs the engineer, executive, and user-researcher agents in parallel on any spec or PRD, then synthesizes their feedback into a unified review. Also added the first AI PM Trend Scout report and fixed repo health issues (missing CHANGELOG entry, broken README links).
+**What's new:** Added a multi-agent review system that runs the engineer, executive, and user-researcher agents in parallel on any spec or PRD, then synthesizes their feedback into a unified review. Also fixed repo health issues (missing CHANGELOG entry, broken README links).
 
 ### Added
 
 **Multi-Agent Review**
 - **[Multi-Agent Review Workflow](./workflows/advanced-workflow/multi-agent-review/)** — Runs all 3 specialist agents in parallel on a spec, then synthesizes their feedback into a unified, priority-ordered review document. Use before any major spec handoff or leadership review.
 - **[Multi-Agent Review Skill](./skills/productivity/multi-agent-patterns.md)** — Human-readable guide on when to use subagents vs agent teams, how to compose the repo's 3 agents for comprehensive reviews, and PM-specific multi-agent patterns (parallel competitive research, draft → review pipelines).
-
-**Trend Report**
-- **[AI PM Trend Scout Report — 2026-03-20](./trend-report-2026-03-20.md)** — First trend report covering Claude Code platform capabilities (agent teams, plugins, hooks), Anthropic ecosystem signals, and repo gap analysis with prioritized improvement proposals.
 
 ### Fixed
 
