@@ -104,3 +104,7 @@ The repo root `.claude/` is pre-configured with agents, commands, and skills rea
 | Ingemar Dvorsky | Contributor | ingemar.dvorsky@sentinelone.com |
 
 *Last updated: April 2026*
+
+---
+
+&copy; 2026 Ingemar Dvorsky. Licensed under the [MIT License](./LICENSE).
