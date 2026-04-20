@@ -1,42 +1,59 @@
-# 🤖 AI Product Management with Claude Code
+# AI Product Management with Claude Code
 
-> A collaborative space for Product Managers to explore, experiment, and share how Claude Code can accelerate and enhance the way we work.
-
----
-
-## 📌 Purpose
-
-This repository serves as a **living knowledge base** for our PM team to:
-
-- Validate how **Claude Code** can support product management workflows
-- Share **learnings, experiments, and outcomes** from real usage
-- Build a library of **reusable prompts, templates, and workflows**
-- Foster a culture of **AI-augmented product thinking**
+A resource for SentinelOne Product Managers to adopt, run, and improve a Claude Code-powered PM Operating System.
 
 ---
 
-## 🆕 What's New
+## The PM Operating System
 
-> See the full [CHANGELOG](./CHANGELOG.md) for a complete history of additions and changes, including what each item does and when to use it.
+The `S1-PM-OS/` folder contains a **complete, opinionated PM Operating System** — the setup we recommend every PM adopt as their primary working environment with Claude Code.
 
-**2026-03-20 — 6 New Additions**
-Added multi-agent review workflow and skill, plugin packaging guide, hooks & automation guide, stakeholder communication skill, and 5 new prompt templates (seeding all 4 prompt categories + research study analysis). See the [full CHANGELOG](./CHANGELOG.md) for details.
+It includes:
+- **Folder structure** (`1-Tasks/` through `6-Data/`) — a canonical way to organize tasks, projects, meetings, knowledge, workflows, and data
+- **22 Claude skills** — pre-built for daily PM work: standup, meeting prep, PRD writing, research synthesis, stakeholder updates, and more
+- **Hooks** — `skill-activator.py` auto-suggests the right skill for each prompt; `model-advisor.py` recommends the right Claude model by complexity
+- **CLAUDE.md + GOALS.md** — session-to-session context so Claude always knows your role, OKRs, and stakeholders
+- **Sample data** — a fully filled-in example OS (Jamie Chen at Acme Analytics) so you can see what it looks like in real use
 
-**2026-03-17 — New Skills: Customer Research, Strategic Planning, Productivity**
-Added 5 new skill guides across 3 new categories in `skills/`: customer feedback synthesis, customer call questionnaire improvement, strategic decision validation, backlog prioritization, and to-do prioritization.
+**Start here:** [`S1-PM-OS/README.md`](./S1-PM-OS/README.md)
 
-**2026-03-13 — Initial Release**
-The repo launched with a full set of onboarding guides, 7 basic workflow templates, 4 advanced multi-step workflows (PRD creation, data analysis, feature request discovery, launch pack generation), the end-to-end PM lifecycle framework, specialist agent templates, and the SentinelOne company context file.
+To adopt the OS for yourself:
+1. Copy `S1-PM-OS/` to your own working directory
+2. Replace `GOALS.md` with your own role, OKRs, and stakeholders
+3. Update `CLAUDE.md` with your product area and team details
+4. Clear out the sample data (`1-Tasks/`, `2-Projects/`, `3-Meetings/`, `5-Knowledge/People/`) and start fresh
 
 ---
 
-## ⚡ Claude Code Infrastructure
+## Getting Started
 
-This repo ships with a pre-configured `.claude/` folder — agents, commands, and skills are ready to use the moment you open this project in Claude Code. No manual setup or file copying required.
+New to Claude Code? [`getting-started/`](./getting-started/) covers installation, setup, authentication, and how to connect to Jira/Confluence via MCP. Work through this before adopting the OS.
 
-### Slash Commands
+---
 
-Type `/command-name` in Claude Code to run a full multi-step workflow:
+## Knowledgebase
+
+[`Knowledgebase/`](./Knowledgebase/) contains **patterns, templates, and experiments** that are either precursors to OS workflows or things we're still figuring out. Browse, try things, share what works.
+
+| Folder | What's there |
+|--------|-------------|
+| `basic-workflows/` | 6 simple templates for common PM tasks (meeting notes → actions, sprint retro, user story, etc.) |
+| `advanced-workflow/` | Multi-step workflows for PRD creation, data analysis, product strategy, feature discovery, launch |
+| `company-context/` | SentinelOne context templates for seeding Claude sessions |
+| `prompts/` | Standalone reusable prompts by use case (discovery, strategy, execution, analytics) |
+| `skills/` | Human-readable guides for skills already in the OS |
+| `learning/` | Courses, tutorials, and educational resources |
+| `case-studies/` | Real PM examples — please contribute when you have a good one |
+| `resources/` | External links, papers, and reference material |
+| `product-management-lifecycle/` | End-to-end PM lifecycle documentation (in progress) |
+
+---
+
+## Claude Code Infrastructure
+
+The repo root `.claude/` is pre-configured with agents, commands, and skills ready to use from this project. These are the **team-level** tools, separate from the full OS:
+
+**Slash Commands** — multi-step workflows:
 
 | Command | What it does |
 |---------|--------------|
@@ -46,9 +63,7 @@ Type `/command-name` in Claude Code to run a full multi-step workflow:
 | `/launch-pack` | Generate all launch artifacts: release notes, sales brief, CS brief, exec announcement |
 | `/product-strategy` | 3-phase strategy: competitive research → 5 strategic choices → Rumelt Kernel doc + exec slides |
 
-### Agents
-
-Pre-installed specialist agents (invoke with `use agent:X` or reference in any prompt):
+**Agents:**
 
 | Agent | When to invoke |
 |-------|----------------|
@@ -56,9 +71,7 @@ Pre-installed specialist agents (invoke with `use agent:X` or reference in any p
 | `executive` | Before leadership syncs, writing a business case, or reframing a setback |
 | `user-researcher` | After a research sprint — synthesizes qualitative data into themes and opportunities |
 
-### Skills
-
-Single-purpose knowledge frameworks (invoke when you have content to process):
+**Skills** (7 core, team-shared):
 
 | Skill | Invoke when... |
 |-------|----------------|
@@ -68,163 +81,26 @@ Single-purpose knowledge frameworks (invoke when you have content to process):
 | `backlog-prioritization` | You have backlog items to normalize, align, and frame for prioritization |
 | `todo-prioritization` | You have a task list and need to decide what to work on next |
 | `multi-agent-review` | You have a spec or PRD ready for parallel review from 3 specialist perspectives |
-| `stakeholder-communication` | You need to draft (not just review) an executive update, bad-news message, or cross-functional announcement |
+| `stakeholder-communication` | You need to draft an executive update, bad-news message, or cross-functional announcement |
 
-> **Note:** The `skills/` folder contains human-readable guides for learning and onboarding. The `.claude/skills/` folder contains the runnable Claude Code versions of those same skills.
-
----
-
-## 🗂️ Repository Structure
-
-```
-├── getting-started/      # Setup guides for both Claude tools
-│   ├── claude-code/            # Terminal-based setup (Claude Code CLI)
-│   │   ├── README.md           # Claude Code overview + when to use vs Desktop
-│   │   ├── installing-claude.md    # Install on Mac/Windows, Zscaler setup, auth
-│   │   ├── claude-md-setup.md      # Set up persistent context for your product/team
-│   │   └── faq.md                  # Common setup issues and troubleshooting
-│   ├── claude-desktop/         # No-terminal alternative using Claude Desktop + Cowork
-│   │   ├── README.md           # Desktop vs CLI: when to use which
-│   │   └── getting-started-cowork.md  # Install Claude Desktop and run your first task
-│   └── mcp-configuration/      # Connect AI tools to external systems via MCP
-│       ├── README.md           # What is MCP and what configs are available
-│       └── jira-mcp-integration-for-windsurf/   # Connect Windsurf to Jira and Confluence
-│           ├── README.md           # Step-by-step setup guide
-│           └── jira-mcp-integration-config.md  # Config file to copy into Windsurf
-│
-├── prompts/              # Reusable prompt templates by PM use case
-│   ├── discovery/        # User research, problem framing, hypothesis generation
-│   ├── strategy/         # Roadmapping, prioritization, competitive analysis
-│   ├── execution/        # PRD writing, spec generation, ticket creation
-│   └── analytics/        # Data interpretation, metric definitions, OKR framing
-│
-├── workflows/            # Step-by-step Claude Code workflows for common PM tasks
-│   ├── basic-workflows/  # 6 ready-to-use templates + quickstart guide
-│   ├── advanced-workflow/          # Multi-step workflows for complex PM tasks
-│   │   ├── prd-creation/           # Full PRD creation workflow with agent reviews
-│   │   ├── data-analysis/          # Funnel analysis, ROI modeling, A/B test readouts
-│   │   ├── product-strategy/       # 3-phase strategy workflow with Rumelt's Kernel
-│   │   └── multi-agent-review/     # Parallel 3-agent spec review with unified synthesis
-│   └── company-context/  # SentinelOne context templates for Claude sessions
-│
-├── case-studies/         # Real examples of Claude Code used in our PM work
-│
-├── skills/               # Guides on Claude Code capabilities relevant to PMs
-│   ├── context-management.md   # How context windows work and how to manage long sessions
-│   ├── reviewer-guides/  # Pullable agent templates for specialized PM tasks
-│   │   ├── user-researcher.md  # Synthesize interviews, tickets, and qualitative feedback
-│   │   ├── executive.md        # Reframe updates and decisions for leadership
-│   │   └── engineer.md         # Review specs for technical gaps and feasibility
-│   ├── customer-research/      # Skills for synthesizing feedback and improving discovery
-│   │   ├── customer-feedback-synthesis.md   # Turn raw notes into themes and decision signals
-│   │   └── customer-call-questionnaire.md   # Audit and improve your interview questions
-│   ├── strategic-planning/     # Skills for decisions and backlog work
-│   │   ├── strategic-decision-validation.md # Pressure-test a direction before committing
-│   │   └── backlog-prioritization.md        # Normalize, align, and frame your backlog
-│   ├── productivity/           # Skills for managing your own focus
-│   │   ├── todo-prioritization.md           # Prioritize your to-do list by strategic leverage
-│   │   └── multi-agent-patterns.md          # When to use subagents vs agent teams
-│   └── communication/          # Skills for drafting stakeholder communications
-│       └── stakeholder-communication.md     # Draft exec updates, bad-news framing, announcements
-│
-├── learning/             # Shared courses, certifications, and learning resources
-│
-└── resources/            # External links, papers, and reference material
-```
+> The OS (`S1-PM-OS/.claude/skills/`) includes 22 skills — a superset of these 7. Once you adopt the OS, use those instead.
 
 ---
 
-## 🚀 Getting Started
+## How to Contribute
 
-**New to Claude Code?** Follow these steps in order:
-
-> **Prefer not to use the terminal?** Skip straight to [`getting-started/claude-desktop/`](./getting-started/claude-desktop/) to set up Claude Desktop and Cowork — no terminal required.
-
-1. **Install Claude Code** — [`getting-started/claude-code/`](./getting-started/claude-code/) covers Mac and Windows installation, Zscaler setup, authentication, and why you're using the terminal instead of the website.
-2. **Complete the level-set course** — Work through [Claude Code for Product Managers](./learning/claude-code-for-pms.md) by Carl Vellotti (~10–12 hours, self-paced, free with Claude Pro). This is the shared baseline for the whole team — do this before anything else.
-3. **Get yourself familiar with the Product Management Lifecycle with the use of Claude Code** - Work through [Product Management Lifecycle](./product-management-lifecycle/) which showcases the end-to-end PM workflow.
-3. **Run your first workflow** — [`workflows/basic-workflows/quickstart.md`](./workflows/basic-workflows/quickstart.md) walks you through a complete end-to-end example in under 15 minutes. Start here before exploring other templates.
-4. **Connect to Jira (optional)** — [`getting-started/mcp-configuration/`](./getting-started/mcp-configuration/) shows you how to connect Windsurf to Jira and Confluence via MCP, so you can query tickets and pages directly from the chat.
-5. **Personalize your CLAUDE.md** — A `CLAUDE.md` is already included at the repo root with shared SentinelOne context and a full index of available agents, commands, and skills. Open [`workflows/company-context/company-context-sentinelone.md`](./workflows/company-context/company-context-sentinelone.md) and fill in your product area and team details — then you're fully set up. See [`getting-started/claude-code/claude-md-setup.md`](./getting-started/claude-code/claude-md-setup.md) for more guidance.
-6. **Explore the templates** — Browse [`workflows/basic-workflows/`](./workflows/basic-workflows/) for 6 ready-to-use PM templates, or jump straight into an advanced workflow with `/prd-creation`, `/data-analysis`, or `/product-strategy`.
-7. **Contribute back** — Share what worked (and what didn't).
+- **Add a prompt** — Drop a tested prompt into `ideas/prompts/` with a short description
+- **Document a workflow** — Write a step-by-step guide in `ideas/basic-workflows/` or `ideas/advanced-workflow/`
+- **Share a case study** — Capture a real example in `ideas/case-studies/`
+- **Improve the OS** — If you find a better pattern, improve a skill in `os/.claude/skills/` and open a PR
 
 ---
 
-## 🤝 How to Contribute
-
-We grow this repo together. Here's how you can add value:
-
-1. **Add a prompt** — Drop a tested prompt into the right `prompts/` subfolder with a short description of what it does and when to use it.
-2. **Document a workflow** — Write a short step-by-step guide in `workflows/` for a task you've automated or improved with Claude Code.
-3. **Share a case study** — Capture a real example in `case-studies/` using the template below.
-4. **Share a learning resource** — Add a course or tutorial to [`learning/`](./learning/) using the template in that folder's README.
-5. **Raise a question or idea** — Open an issue to spark discussion with the team.
-
-### Case Study Template
-
-```markdown
-## [Task Name]
-**PM:** [Your name]  
-**Date:** [YYYY-MM-DD]  
-**Time Saved:** [Estimate]
-
-### The Challenge
-What problem were you trying to solve?
-
-### How Claude Code Helped
-What did you ask it to do? What prompt/workflow did you use?
-
-### Outcome
-What was the result? What would you do differently?
-
-### Prompt Used
-[Paste the prompt here]
-```
-
----
-
-## 📐 Prompt Writing Guidelines
-
-To keep our prompt library high quality and reusable:
-
-- **Be specific about role and context** — e.g., *"You are a senior PM at a B2B SaaS company..."*
-- **Define the output format** — e.g., *"Return a table with columns: Feature, User Value, Effort, Risk"*
-- **Include constraints** — e.g., *"Limit to 5 items. Avoid technical jargon."*
-- **Test before committing** — only share prompts you've validated yourself
-- **Add a usage note** — one line explaining when this prompt is most useful
-
----
-
-## 📚 Learning Resources
-
-Head to the [`learning/`](./learning/) folder for shared courses, certifications, and tutorials — including the first entry, [Claude Code for Product Managers](./learning/claude-code-for-pms.md) by Carl Vellotti.
-
-Quick links:
-- [Anthropic Prompt Engineering Guide](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)
-- [Claude Code Documentation](https://docs.claude.ai)
-- [Zscaler Certificate Documentation](https://connect.sentinelone.com/site/b00a4fac-a250-505d-abfd-079c9f50f972/page/64426c1d-c34b-433c-a5f2-db32495d0dc3)
-
----
-
-## 🧭 Guiding Principles
-
-- **AI augments, it doesn't replace** — We use Claude Code to go faster and think better, not to skip thinking.
-- **Share openly** — A prompt that saves you 30 minutes might save the whole team hours.
-- **Validate and iterate** — Always review Claude's output critically. Document what works and what doesn't.
-- **Keep the human in the loop** — Especially for decisions that affect users, customers, or strategy.
-
----
-
-## 📬 Maintainers
+## Maintainers
 
 | Name | Role | Contact |
 |---|---|---|
 | Ben Carmel | Repo Owner | ben.carmel@sentinelone.com |
 | Ingemar Dvorsky | Contributor | ingemar.dvorsky@sentinelone.com |
 
-> Want to become a maintainer? Reach out or open a PR!
-
----
-
-*Last updated: March 2026*
+*Last updated: April 2026*

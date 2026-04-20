@@ -72,11 +72,13 @@ Skills are single-purpose knowledge frameworks. Invoke when you have relevant co
 ## Repo Structure
 
 ```
-workflows/advanced-workflow/   # Source workflows (read these to understand command internals)
-skills/reviewer-guides/        # Human-readable agent guides
-skills/customer-research/      # Human-readable skill guides
-skills/strategic-planning/     # Human-readable skill guides
-skills/productivity/           # Human-readable skill guides
-prompts/                       # Standalone reusable prompts
-case-studies/                  # Real PM examples
+S1-PM-OS/                            # The PM Operating System — adopt this as your primary workspace
+S1-PM-OS/.claude/skills/             # 22 Claude skills for daily PM work
+S1-PM-OS/4-Workflows/                # Repeatable PM processes (PRD, launch, strategy, etc.)
+S1-PM-OS/CLAUDE.md + GOALS.md        # Your session context and OKR identity
+getting-started/               # Installation, setup, MCP configuration
+Knowledgebase/advanced-workflow/       # Source workflows (read these to understand command internals)
+Knowledgebase/skills/reviewer-guides/  # Human-readable agent guides
+Knowledgebase/prompts/                 # Standalone reusable prompts
+Knowledgebase/case-studies/            # Real PM examples
 ```

@@ -6,6 +6,23 @@
 
 ---
 
+## 2026-04-20 — Repo Restructure: S1-PM-OS + Knowledgebase
+
+**What's new:** The repo is reorganized around a clear two-part structure. `S1-PM-OS/` is the complete, production PM Operating System — what we recommend every PM adopt. `Knowledgebase/` contains all the patterns, templates, and experiments from the previous repo structure, kept as a living reference and exchange space.
+
+### Changed
+
+- **Repo structure** — The root now has three folders: `S1-PM-OS/` (the OS), `Knowledgebase/` (patterns and experiments), and `getting-started/` (onboarding). Previous top-level folders (`workflows/`, `prompts/`, `skills/`, `learning/`, `case-studies/`, `resources/`, `product-management-lifecycle/`) have moved into `Knowledgebase/`.
+- **README.md** — Rewritten to lead with the OS as the primary recommendation, with Knowledgebase clearly positioned as supplemental.
+- **CLAUDE.md** — Updated repo structure map to reflect the new layout.
+
+### Added
+
+- **[S1-PM-OS](./S1-PM-OS/)** — A complete, opinionated PM Operating System. Includes the 1–6 folder structure (Tasks, Projects, Meetings, Workflows, Knowledge, Data), 22 Claude skills for daily PM work, two hooks (skill-activator and model-advisor), CLAUDE.md + GOALS.md templates, and fully filled-in sample data so you can see what a real OS looks like. Copy this to your own working directory, replace the personal context, and start using it.
+- **[Knowledgebase](./Knowledgebase/)** — All prior workflow guides, prompt templates, skill guides, learning resources, and case studies. Use for reference, exploration, and contributing new patterns back to the team.
+
+---
+
 ## 2026-03-20 — Stakeholder Communication Skill
 
 **What's new:** Added a skill for drafting stakeholder communications — exec updates, bad-news framing, cross-functional announcements, and board prep. Pairs with the executive agent for a complete draft → review workflow.

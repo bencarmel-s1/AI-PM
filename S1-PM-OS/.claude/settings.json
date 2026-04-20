@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /ABSOLUTE/PATH/TO/YOUR/WORKSPACE/.claude/hooks/skill-activator.py"
+          },
+          {
+            "type": "command",
+            "command": "python3 /ABSOLUTE/PATH/TO/YOUR/WORKSPACE/.claude/hooks/model-advisor.py"
+          }
+        ]
+      }
+    ]
+  }
+}
